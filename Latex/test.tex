@@ -1,0 +1,110 @@
+\documentclass[12pt]{article}
+\usepackage{CJKutf8}
+\usepackage{graphicx}
+\usepackage{listings}
+\begin{document}
+\begin{CJK*}{UTF8}{bsmi}
+
+    \section{教學: Latex 在 vistual studio上編譯}
+
+    \subsection{安裝編譯環境-Texlive}
+    \subsubsection{}
+    點選https://tug.org/texlive/acquire-netinstall.html
+    \subsubsection{}
+    點install-tl.zip下載並解壓縮
+    \subsubsection{}
+    執行install-tl-windows.bat\\
+    (網站說也可以下載install-tl-advanced.bat會省一些空間而不安裝某些套件)
+    (我是下載前者，但下載很久)
+    \newpage
+    \subsection{設定環境變數}
+    \subsubsection{}
+    下載完前1.1後，\\
+    在任意地方案鍵盤: windows + S 輸入"編輯系統環境變數"\\
+    點下方 "環境變數(N)..."(會跳出如下圖的東西)\\
+    \includegraphics[width=6in]{teaching.png}\\
+    點擊系統變數(s)裡面的Path並按下面的"編輯"\\
+    會跳出來一個介面，按新增然後去1.1下載的路徑找win32的資料夾\\
+    Example: 我是"D:$\backslash$texlive$\backslash$2021$\backslash$bin$\backslash$win32"
+    \subsection{下載viscode套件-LaTeX Workshop}
+    \subsubsection{}
+    開啟vscode 並按最左側的延伸模組
+    \subsubsection{}
+    下載LaTeX Workshop
+    \newpage
+    \subsection{如果以上的方法還不能執行}
+    打開vscode 按左下角齒輪 按設定 看到最右上角有一個圖案是一本書跟一個箭頭的點下去\\
+    會看到setting.json\\
+    並在最外層的大括號\{\}內的最後面加上以下程式碼\\
+    不要把前面的內容也蓋掉了!!!\\
+    不要把前面的內容也蓋掉了!!!\\
+    不要把前面的內容也蓋掉了!!!\\
+    然後找到程式碼內有路徑的地方 改成自己的路徑\\
+
+    \begin{lstlisting}[frame=single]
+    "latex-workshop.latex.recipes": [
+    {
+    "name": "xelatex",
+    "tools": [
+    "xelatex"
+    ]
+    },
+    {
+    "name": "pdflatex",
+    "tools": [
+    "pdflatex"
+    ]
+    },
+    {
+    "name": "xelatex->bibtex->xelatex*2",
+    "tools": [
+    "xelatex",
+    "bibtex",
+    "xelatex",
+    "xelatex"
+    ]
+    },
+    {
+    "name": "pdflatex->bibtex->pdflatex*2",
+    "tools": [
+    "pdflatex",
+    "bibtex",
+    "pdflatex",
+    "pdflatex"
+    ]
+    }
+    ],
+    "latex-workshop.latex.tools": [
+    {
+    "name": "xelatex",
+    "command": "C:\\texlive\\2021\\bin\\win32\\xelatex",
+    "args": [
+    "-synctex=1",
+    "-interaction=nonstopmode",
+    "-shell-escape",
+    "%DOC%.tex"
+    ]
+    },
+    {
+    "name": "pdflatex",
+    "command": "C:\\texlive\\2021\\bin\\win32\\pdflatex",
+    "args": [
+    "-synctex=1",
+    "-interaction=nonstopmode",
+    "-file-line-error",
+    "%DOC%"
+    ]
+    },
+    {
+    "name": "bibtex",
+    "command": "C:\\texlive\\2021\\bin\\win32\\bibtex",
+    "args": [
+    "%DOCFILE%"
+    ]
+    }
+    ],
+    \end{lstlisting}
+
+
+\end{CJK*}
+\end{document}

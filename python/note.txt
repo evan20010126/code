@@ -1,0 +1,7 @@
+我的pip路徑:
+C:\Users\User\AppData\Local\Programs\Python\Python37\Scripts
+
+keras預設下載路徑:
+C:\Users\User\.keras
+
+pip install ...
