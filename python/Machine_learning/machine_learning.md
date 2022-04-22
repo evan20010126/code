@@ -75,3 +75,21 @@
 - Learning Features from rich data
 - if 資料少可以採取此method
     > 先找類似應用的data預先訓練 -> 在轉移(用自己的data)
+
+
+## Chap2 利用python做向量分析
+- 基本概念
+  > ![img01](img01.jpg)
+
+
+## Chap3 貝式定理回顧
+
+## Chap4 監督式學習(Supervised Learning)
+- 訓練資料有標記label(有標準答案) -> 演算法 -> 預測模型
+- Instance-Based Classifiers
+  - 分為兩種
+    1. Rote-learner
+       - 只有當unseen data的所有attributes吻合某一個training example時，判斷其為該類別
+        > 53u 
+    2. Nearest neighbor classifier 
+       - "一筆unseen case透過自己的特徵值" 與 "每筆training records(instance)(每個特徵空間中的特徵點)算距離"，取最近的前幾名instance(最像的) -> 做決定
