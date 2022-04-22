@@ -116,10 +116,13 @@ def generateInstruction(opcode, operand, SYMTAB):  # opcode 不為假指令，�
                     # Base relative
                     instruction += 2**14  # set b = 1
                     disp = (SYMTAB[operand] - Base_register)
-                    if opcode == "STCH" and operand == "BUFFER":
-                        print(Base_register)
-            else:
-                print("You need to use format 4. Variable disp will not be assign!")
+                    # Debug 用
+                    # if opcode == "STCH" and operand == "BUFFER":
+                    #     print(Base_register)
+                else:
+                    print("You need to use format 4. Variable disp will not be assign!")
+                    print(opcode)
+                    print(Base_register)
 
         # 再設定 e (Why 不在一開始分類format就設定-> 因為format2不會有e)
         if op_format == 3:
@@ -140,7 +143,7 @@ def generateInstruction(opcode, operand, SYMTAB):  # opcode 不為假指令，�
         #! 特殊情況
         # 若有 LDB指令(存入Base暫存器)，紀錄Base暫存器的值，以供後續disp計算用
         # 假設 LDB 後 operand 僅有立即值的情況，因網路上沒有仔細講LDB後可放什麼，而若用@來放值進去base，由assembler的角度沒有辦法知道Base暫存器的值
-        if opcode == "LDB":
+        if opcode == "LDB" or opcode == "+LDB":
             if operand in SYMTAB:
                 Base_register = int(SYMTAB[operand])
             else:  # 為常數
@@ -153,7 +156,21 @@ def generateInstruction(opcode, operand, SYMTAB):  # opcode 不為假指令，�
         if op_format == 4:
             instruction += 2**25
             instruction += 2**24
-    return objfile.hexstrToWord(hex(instruction))
+    '''
+    下面的程式碼若把 if & else 都拿掉
+    最後僅剩下最後一行"return objfile.hexstrToWord(hex(instruction))"
+    然後跑midterm.asm就可以發現 F103026 少一個0的問題
+    '''
+    if (len(objfile.hexstrToWord(hex(instruction))) != op_format*8//4):
+        # 經過段考時候測試，若是opcode + n i 之後仍為16以下的數字(這樣只有1bit)，會沒有補0，因為老師的hexstrToWord套用後僅會補齊到6個字母 Ex. F103026 是 Format3 但少一個數字 原因是因為第一個byte用16進制表示僅有一個字母
+        empty_space = op_format*8//4 - \
+            len(objfile.hexstrToWord(hex(instruction)))
+        output_str = objfile.hexstrToWord(hex(instruction))
+        for i in range(0, empty_space):
+            output_str = "0" + output_str
+        return output_str
+    else:
+        return objfile.hexstrToWord(hex(instruction))
 
 
 if len(sys.argv) != 2:
