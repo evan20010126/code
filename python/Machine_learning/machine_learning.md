@@ -1,3 +1,5 @@
+<font face="華康竹風體w4">
+
 # Machine Learning
 
 ## Chap1 簡介
@@ -93,3 +95,19 @@
         > 53u 
     2. Nearest neighbor classifier 
        - "一筆unseen case透過自己的特徵值" 與 "每筆training records(instance)(每個特徵空間中的特徵點)算距離"，取最近的前幾名instance(最像的) -> 做決定
+
+
+## Support vector machine
+- 已經做特徵抽取後，而想在特徵空間上由Support vector machine找到分類邊界
+  > 分類邊界又稱決策邊界(decision bonder)，可將點代入，if result <font 0: 則在線的左方，if result > 0: 則在線的右方，把此條線當作分類器
+- 有多條決策邊界(都可以將training data類別分開)，哪一條比較好?
+  > Support vector machine say:\
+  > >算點到線的距離，選兩類最近靠近decision bonder的點(稱為Support vector支援向量: 用來定義邊界線的那些特徵向量)，劃出兩條與decision bonder平行但通過此點的邊界線，定義出兩條線之間的距離(margin，邊界的緩衝距離)
+  >
+  > 選margin最大的較佳，因為抽特徵值的時候，可能有誤差，會造成在特徵空間上的點有偏差，可能因為誤差跨過邊界，誤判為另一類
+
+
+
+
+
+</font>
