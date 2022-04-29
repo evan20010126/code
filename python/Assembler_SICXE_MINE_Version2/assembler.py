@@ -162,7 +162,7 @@ def generateInstruction(opcode, operand, SYMTAB):  # opcode 不為假指令，�
     然後跑midterm.asm就可以發現 F103026 少一個0的問題
     '''
     if (len(objfile.hexstrToWord(hex(instruction))) != op_format*8//4):
-        # 經過段考時候測試，若是opcode + n i 之後仍為16以下的數字(這樣只有1bit)，會沒有補0，因為老師的hexstrToWord套用後僅會補齊到6個字母 Ex. F103026 是 Format3 但少一個數字 原因是因為第一個byte用16進制表示僅有一個字母
+        # 使用段考考題測試，若是opcode + n i 之後仍為16以下的數字(這樣只有1bit)，會沒有補0，因為老師的hexstrToWord套用後僅會補齊到6個字母 Ex. F103026 是 Format3 但少一個數字 原因是因為第一個byte用16進制表示僅有一個字母
         empty_space = op_format*8//4 - \
             len(objfile.hexstrToWord(hex(instruction)))
         output_str = objfile.hexstrToWord(hex(instruction))
