@@ -2,7 +2,7 @@
 
 待學:
 1. [Object.defineProperty()](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)
-2. [fetch](https://nicolakacha.coderbridge.io/2020/09/11/sync-async/)\
+2. [fetch](https://nicolakacha.coderbridge.io/2020/09/11/sync-async/)
 3. [w3-bind()](https://www.w3schools.com/js/js_function_bind.asp)
 4. [bind](https://realdennis.medium.com/javascript-%E8%81%8A%E8%81%8Acall-apply-bind%E7%9A%84%E5%B7%AE%E7%95%B0%E8%88%87%E7%9B%B8%E4%BC%BC%E4%B9%8B%E8%99%95-2f82a4b4dd66)
 5. [this的遺失](https://www.reddit.com/r/learnjavascript/comments/fixrf1/why_is_this_lost_when_a_method_is_used_as_a/)
@@ -16,7 +16,7 @@
     
     [參考網站](https://medium.com/itsems-frontend/javascript-sync-async-22e75e1ca1dc)
 
-    ![image](img02.png)
+    ![image](/introduce_img/img02.png)
     - 同步: 一次只做一件事情。
     - 非同步: 同時可以做很多件事情，不需要等到前一件事情做完才做下一件事情。
     > 這個字常常讓人很混淆，同步 "並非" 同步處理多件事 !
@@ -40,9 +40,9 @@
         - 使用時機: 當一遇到函式需要等待，但其他函式又與該等待的函式有關連時，就會使用CallBack Function的時機點來處理。
         - 缺點:
             1. 多條件的過多層CallBack，會讓整個段函式不易閱讀也不好護維
-            ![image](img03.png)
+            ![image](/introduce_img/img03.png)
             2. 過多的CallBack function參數及指向，會在閱讀與維護時，尋找程式的主控權步驟變的相當混亂。
-            ![image](img04.png)
+            ![image](/introduce_img/img04.png)
     - 應用 Example:
         - addEventListener (非同步API)
         - setTimeout
@@ -78,7 +78,7 @@
             > "Producing Code" (May take some time)
             > "Consuming Code" (Must wait for a fulfilled Promise)
         
-            ![image](img05.png)
+            ![image](/introduce_img/img05.png)
 
         - Syntax:
             ```
@@ -397,7 +397,7 @@
     
     prototype: 為一種讓別的物件繼承其中的屬性的物件。
 
-    ![image](img01.png)
+    ![image](/introduce_img/img01.png)
     - Note:
         1. Every function has a prototype object.
         2. A function's prototype has a constructor property that references back to the function.
