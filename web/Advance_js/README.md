@@ -16,7 +16,7 @@
     
     [參考網站](https://medium.com/itsems-frontend/javascript-sync-async-22e75e1ca1dc)
 
-    ![image](/introduce_img/img02.png)
+    ![image](img02.png)
     - 同步: 一次只做一件事情。
     - 非同步: 同時可以做很多件事情，不需要等到前一件事情做完才做下一件事情。
     > 這個字常常讓人很混淆，同步 "並非" 同步處理多件事 !
@@ -40,9 +40,9 @@
         - 使用時機: 當一遇到函式需要等待，但其他函式又與該等待的函式有關連時，就會使用CallBack Function的時機點來處理。
         - 缺點:
             1. 多條件的過多層CallBack，會讓整個段函式不易閱讀也不好護維
-            ![image](/introduce_img/img03.png)
-            2. 過多的CallBack function參數及指向，會在閱讀與維護時，尋找程式的主控權步驟變的相當混亂。
-            ![image](/introduce_img/img04.png)
+            ![image](img03.png)
+            1. 過多的CallBack function參數及指向，會在閱讀與維護時，尋找程式的主控權步驟變的相當混亂。
+            ![image](img04.png)
     - 應用 Example:
         - addEventListener (非同步API)
         - setTimeout
@@ -78,7 +78,7 @@
             > "Producing Code" (May take some time)
             > "Consuming Code" (Must wait for a fulfilled Promise)
         
-            ![image](/introduce_img/img05.png)
+            ![image](img05.png)
 
         - Syntax:
             ```
@@ -397,7 +397,7 @@
     
     prototype: 為一種讓別的物件繼承其中的屬性的物件。
 
-    ![image](/introduce_img/img01.png)
+    ![image](img01.png)
     - Note:
         1. Every function has a prototype object.
         2. A function's prototype has a constructor property that references back to the function.
