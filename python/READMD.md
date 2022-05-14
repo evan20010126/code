@@ -1,22 +1,24 @@
 # Python tips
 
 ## Contents 
-+ [frequently used built-in modules](#frequently-used-built-in-modules)
-+ [String method](#string-method)
-+ [Most Values are True](#most-values-are-true)
-+ [list comprehension](#list-comprehension)
-+ [list sort](#list-sort)
-+ [Copy list](#copy-list)
-+ [Asterisk *](#asterisk)
-+ [Set {}](#set)
-+ [Dictionary { : , :, ...}](#dictionary)
-+ [Class](#class)
-+ [Iterator: \__iter__() and \__next__()](#iterator-iter-and-next)
-+ [JSON](#json)
-+ [python string format](#python-string-format)
-+ [file accessing](#file-accessing)
-+ [with](#with)
-+ [decorator](#decorator)
+- [Python tips](#python-tips)
+  - [Contents](#contents)
+    - [frequently used built-in modules.](#frequently-used-built-in-modules)
+    - [String method](#string-method)
+    - [Most Values are True](#most-values-are-true)
+    - [list comprehension](#list-comprehension)
+    - [list sort](#list-sort)
+    - [Copy list](#copy-list)
+    - [Asterisk *](#asterisk-)
+    - [Set {}](#set-)
+    - [Dictionary { : , :, ...}](#dictionary-----)
+    - [Class](#class)
+    - [Iterator: __iter__() and __next__()](#iterator-iter-and-next)
+    - [JSON](#json)
+    - [python string format](#python-string-format)
+    - [file accessing](#file-accessing)
+    - [with](#with)
+    - [decorator 參考網站](#decorator-參考網站)
 ---
 
 ### frequently used built-in modules.
@@ -274,48 +276,48 @@ isinstance(x, float) //determine if an object is of a certain data type
         > 8. False
         > 9. None
     1. python's object & json    
-        | Python| JSON   |
-        |-------|--------|
-        | dict	| Object |
-        | list	| Array  |
-        | tuple	| Array  |
-        | str	| String |
-        | int	| Number |
-        | float	| Number |
-        | True	| true   |
-        | False	| false  |
-        | None	| null   |
+        | Python | JSON   |
+        | ------ | ------ |
+        | dict   | Object |
+        | list   | Array  |
+        | tuple  | Array  |
+        | str    | String |
+        | int    | Number |
+        | float  | Number |
+        | True   | true   |
+        | False  | false  |
+        | None   | null   |
 
 ### python string format
 
 ---
 
 - table:
-    |word|effect|
-    |-------|-----------------------------------------------|
-    |:<		|Left aligns the result (within the available space)|
-    |:>		|Right aligns the result (within the available space)|
-    |:^		|Center aligns the result (within the available space)|
-    |:=		|Places the sign to the left most position|
-    |:+		|Use a plus sign to indicate if the result is positive or negative|
-    |:-		|Use a minus sign for negative values only|
-    |: 		|Use a space to insert an extra space before positive numbers (and a |minus sign before negative numbers)
-    |:,		|Use a comma as a thousand separator|
-    |:_		|Use a underscore as a thousand separator|
-    |:b		|Binary format|
-    |:c		|Converts the value into the corresponding unicode character|
-    |:d		|Decimal format|
-    |:e		|Scientific format, with a lower case e|
-    |:E		|Scientific format, with an upper case E|
-    |:f		|Fix point number format ({:.2f})|
-    |:F		|Fix point number format, in uppercase format (show inf and nan as INF and NAN)|
-    |:g		|General format|
-    |:G		|General format (using a upper case E for scientific notations)|
-    |:o		|Octal format|
-    |:x		|Hex format, lower case|
-    |:X		|Hex format, upper case|
-    |:n		|Number format|
-    |:%		|Percentage format|
+    | word | effect                                                                         |
+    | ---- | ------------------------------------------------------------------------------ |
+    | :<   | Left aligns the result (within the available space)                            |
+    | :>   | Right aligns the result (within the available space)                           |
+    | :^   | Center aligns the result (within the available space)                          |
+    | :=   | Places the sign to the left most position                                      |
+    | :+   | Use a plus sign to indicate if the result is positive or negative              |
+    | :-   | Use a minus sign for negative values only                                      |
+    | :    | Use a space to insert an extra space before positive numbers (and a            | minus sign before negative numbers) |
+    | :,   | Use a comma as a thousand separator                                            |
+    | :_   | Use a underscore as a thousand separator                                       |
+    | :b   | Binary format                                                                  |
+    | :c   | Converts the value into the corresponding unicode character                    |
+    | :d   | Decimal format                                                                 |
+    | :e   | Scientific format, with a lower case e                                         |
+    | :E   | Scientific format, with an upper case E                                        |
+    | :f   | Fix point number format ({:.2f})                                               |
+    | :F   | Fix point number format, in uppercase format (show inf and nan as INF and NAN) |
+    | :g   | General format                                                                 |
+    | :G   | General format (using a upper case E for scientific notations)                 |
+    | :o   | Octal format                                                                   |
+    | :x   | Hex format, lower case                                                         |
+    | :X   | Hex format, upper case                                                         |
+    | :n   | Number format                                                                  |
+    | :%   | Percentage format                                                              |
 
 
 ### file accessing
