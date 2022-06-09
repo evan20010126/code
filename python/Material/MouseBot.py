@@ -4,10 +4,13 @@ import pyautogui
 #     x = pyautogui.position()
 #     print(x)
 
+# while(True):
 x, y = pyautogui.position()
-print(type(x))
-
-pyautogui.click(x=1564, y=45)
+print(x)
+print(y)
+# pyautogui.dragRel(300, 20)
+# pyautogui.click()
+# pyautogui.click(x=1564, y=45)
 # pyautogui.doubleClick()
 
 # pyautogui.moveTo(100, 200, 2)

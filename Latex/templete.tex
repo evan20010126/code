@@ -1,0 +1,279 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage{CJKutf8}
+%:::::::::::::::::::::::::::::::::::::::::::::::::
+% \usepackage{xeCJK}
+    % \setCJKmainfont{標楷體}
+%:::::::::::::::::::::::::::::::::::::::::::::::::
+    \usepackage{graphicx}
+    \usepackage{amsmath}
+    \usepackage{fancyhdr}
+    \usepackage{cite}
+    \usepackage{framed}
+    \usepackage{a4wide}
+    \usepackage{float}
+    \usepackage{blindtext}
+    \usepackage{multicol}
+    %The below Section make chapter and its name to center of the page
+    \usepackage{blindtext}
+    \usepackage{xpatch}
+    \usepackage{mathptmx}
+    \usepackage{geometry}
+    \geometry{
+        right=25mm,
+        left=35mm,
+        top=25mm,
+        bottom=25mm,
+        }
+\usepackage{indentfirst}
+\setlength{\parindent}{24pt}
+
+\usepackage{tocloft}
+\makeatletter
+\usepackage[fontsize=14pt]{fontsize}
+\renewcommand{\cftdot}{}
+\renewcommand{\cftchappresnum}{CHAPTER }
+\renewcommand{\cftchapaftersnum}{:}
+\renewcommand{\cftchapnumwidth}{6.5em}
+\renewcommand\cftfigindent{0pt}
+\renewcommand\cftfigpresnum{Figure\ }
+\renewcommand\cftfigaftersnum{ : }
+\renewcommand{\cftfignumwidth}{5.5em}
+\renewcommand{\cfttabpresnum}{Table\ }
+\renewcommand\cfttabaftersnum{ : }
+\renewcommand{\cfttabnumwidth}{5em}
+\makeatother
+
+
+% \setmainfont{Times New Roman}
+\makeatletter
+\xpatchcmd{\@makeschapterhead}{%
+\Huge \bfseries  #1\par\nobreak%
+}{%
+\Huge \bfseries\centering #1\par\nobreak%
+}{\typeout{Patched makeschapterhead}}{\typeout{patching of @makeschapterhead failed}}
+
+
+\xpatchcmd{\@makechapterhead}{%
+\huge\bfseries \@chapapp\space \thechapter
+}{%
+\huge\bfseries\centering \@chapapp\space \thechapter
+}{\typeout{Patched @makechapterhead}}{\typeout{Patching of @makechapterhead failed}}
+
+\makeatother
+%The above Section make chapter and its name to center of the page
+%\unwanted packages also included
+\linespread{1.5}
+%\pagestyle{fancy}
+%\fancyhead{}
+%\header and footer section
+%\renewcommand\headrulewidth{0.1pt}
+%\fancyhead[L]{\footnotesize \leftmark}
+%\fancyhead[R]{\footnotesize \thepage}
+%\renewcommand\headrulewidth{0pt}
+%\fancyfoot[R]{\small College of Engineering, Kidangoor}
+%\renewcommand\footrulewidth{0.1pt}
+%\fancyfoot[C]{2019 - 2020}
+%\fancyfoot[L]{\small Name of the project}
+
+
+
+%:::::::::::::::::::::::::::::::::::::::::::::::::
+% \setromanfont{Times New Roman}
+%:::::::::::::::::::::::::::::::::::::::::::::::::
+\begin{document}
+\begin{CJK*}{UTF8}{bkai}
+    \begin{center}
+        \begin{LARGE}
+            國立台灣海洋大學資訊工程學系\\
+            專題報告\\
+        \end{LARGE}
+        \vspace{0.5cm}
+
+        \begin{LARGE}
+            Sign Language Interaction Tutorial System - Openpose\\
+        \end{LARGE}
+        \vspace{1cm}
+        Instructor:\\
+        張欽圳
+        \begin{scriptsize}
+            教授
+        \end{scriptsize}
+        \\
+        \vspace{1 cm}
+        Submitted by: \\
+
+        00957209 林心怡
+        \textbf{ ( 00957209@mail.ntou.edu.tw ) }\\
+        00957202 吳秉宸
+        \textbf{ ( 00957202@mail.ntou.edu.tw ) }\\
+
+        00853029 張正德
+        \textbf{ ( 00853029@mail.ntou.edu.tw ) }\\
+        \vspace{0.2cm}
+
+    \end{center}
+
+    % \vspace{4pt}
+    \begin{center}
+        \textbf{DEPT. OF .........}\\
+
+        \textbf{NATIONAL TAIWAN OCEAN UNIVERSITY}\\
+        \vspace{12pt}
+        \textbf{MAY 2022}\\
+        % MAY 2022
+    \end{center}
+    \thispagestyle{empty}
+
+    \newpage
+
+    \pagenumbering{roman}
+
+    % \begin{abstract}
+
+    \begin{center}
+        \textbf{ABSTRACT}
+        \addcontentsline{toc}{chapter}{Abstract}
+    \end{center}
+
+    \textbf{Keywords} - Lorem Ipsum , Lorem Ipsum
+
+    \vspace{0.8cm}
+
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    %  \end{abstract} 
+
+    \newpage
+    % Contents
+    \tableofcontents %This command used for index.
+    \newpage
+    \listoftables
+
+    \addcontentsline{toc}{chapter}{List of Figures}
+
+    \newpage
+    \listoffigures
+    \addcontentsline{toc}{chapter}{List of Tables}
+
+
+
+    \newpage
+    \begin{center}
+        \textbf{LIST OF SYMBOLS, ABBREVIATIONS AND NOMENCLATURE}
+    \end{center}
+    \addcontentsline{toc}{chapter}{List of Symbols, abbreviations}
+
+    \begin{itemize}
+        \item[]\textbf{ Sample}  : Sample Text
+    \end{itemize}
+
+    \vspace{2cm}
+    \begin{center}
+    \end{center}
+    % \thispagestyle{empty}
+
+
+    \newpage
+
+    \pagenumbering{arabic}
+    \chapter{緒論}
+
+    \section{研究背景}
+    \par
+    手語是聾啞人士很重要的溝通方式，生活中難免碰到一些聾啞人士，想要與他們交流需先學習手語，但網路上現有的資源幾乎都是用影片學習的方式，沒有可以自我檢視的系統，因此本專題設計一套主要提供手語教學、測驗、偵錯的功能的系統，提供給想要入門手語的初學者一個學習的平台。
+
+    \section{研究目標}
+    \par
+    在現今的手語辨認技術上，已經可以利用深度學習辨識出動態的手語片段，但無偵測錯誤的功能。
+    \par
+    本專題利用三種神經網路架構(Transformer、CNN、LSTM)實踐辨識手語，並分別應用Grad-Cam演算法於時間序列資料達到錯誤偵測的功能。探討這三種不同的神經網路模型對於二維時間序列資料分類的準確度，與分析對於三種模型結合Grad-Cam的效果，研究出最適合本專題應用的神經網路架構。
+
+
+    \section{Past Efforts}
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+
+
+
+
+
+    \section{New Concept}
+    \begin{itemize}
+        \item Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        \item Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        \item Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    \end{itemize}
+
+    \section{What}
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+    \section{How}
+    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+    \section{Rest Sections}
+    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+    \chapter{BACKGROUND}
+    \section{What is ........}
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    \begin{figure}[H]
+        \centering
+        % \includegraphics[scale=0.6]{dtu.jpg}
+        \caption{Sample Image}
+        \label{fig:sample image}
+    \end{figure}
+
+    \begin{table}[htbp]
+        \caption{Sample Table}
+        \vspace{0.5cm}
+        \resizebox{\columnwidth}{!}{%
+            \begin{tabular}{|c|c|c|c|c|}
+                \hline
+                Units in Hidden Layers & Accuracy & Precision & Recall & F1-score \\
+                \hline
+
+                100,20,20              & 0        & 0         & 0      & 0        \\
+                100,20,20              & 0        & 0         & 0      & 0        \\
+                100,20,20              & 0        & 0         & 0      & 0        \\
+                100,20,20              & 0        & 0         & 0      & 0        \\
+                100,20,20              & 0        & 0         & 0      & 0        \\
+                \hline
+            \end{tabular}
+        }
+    \end{table}
+
+
+    \chapter{CONCLUSION}
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+    \addcontentsline{toc}{chapter}{Appendices}
+    \chapter*{\centering \large Appendix\markboth{Appendix}{Appendix}}
+
+    \begin{figure}[H]
+        \centering
+        % \includegraphics[scale=0.40]{dtu.jpg}
+        \label{fig:AIS data}
+    \end{figure}
+
+    \addcontentsline{toc}{chapter}{References}
+
+    \begin{thebibliography}{99}
+        \bibitem{b1}Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        \bibitem{b2}Lorem Ipsum is simply dummy text of the printing and typesetting
+        \bibitem{b3} Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    \end{thebibliography}
+
+    \chapter*{\centering \large PAPER ACCEPTANCE PROOF\markboth{PAPER ACCEPTANCE PROOF}{PAPER ACCEPTANCE PROOF}}
+
+
+    \chapter*{\centering \large REGISTRATION PROOF\markboth{REGISTRATION PROOF}{REGISTRATION PROOF}}
+
+
+    \chapter*{\centering \large SCOPUS INDEXED CONFERENCE PROOF\markboth{SCOPUS INDEXED CONFERENCE PROOF}{SCOPUS INDEXED CONFERENCE PROOF}}
+
+\end{CJK*}
+\end{document}
+
