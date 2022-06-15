@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.1.23)  8 JUN 2022 00:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.1.23)  13 JUN 2022 00:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -424,90 +424,90 @@ Package: xfp 2022-01-12 L3 Floating point unit
 ))
 Patched makeschapterhead
 Patched @makechapterhead
-LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 83.
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 84.
 (d:/texlive/2021/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 ) (tmp/templete.aux)
 \openout1 = `templete.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for C00/song/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for C05/song/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for C09/song/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for C10/song/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for C20/song/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for C19/song/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for C40/song/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for C42/song/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for C43/song/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for C50/song/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for C52/song/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for C49/song/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for C60/mj/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for C61/mj/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for C63/mj/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for C64/mj/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for C65/mj/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for C70/song/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for C31/song/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for C32/song/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for C33/song/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for C34/song/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for C35/song/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for C36/song/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for C37/song/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for C80/song/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for C81/song/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for C01/song/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for C11/song/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for C21/song/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for C41/song/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for C62/song/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for C00/song/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for C05/song/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for C09/song/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for C10/song/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for C20/song/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for C19/song/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for C40/song/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for C42/song/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for C43/song/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for C50/song/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for C52/song/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for C49/song/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for C60/mj/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for C61/mj/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for C63/mj/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for C64/mj/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for C65/mj/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for C70/song/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for C31/song/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for C32/song/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for C33/song/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for C34/song/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for C35/song/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for C36/song/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for C37/song/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for C80/song/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for C81/song/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for C01/song/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for C11/song/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for C21/song/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for C41/song/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for C62/song/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
  (d:/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count309
@@ -568,7 +568,7 @@ File: UTF8.enc 2021/10/16 4.8.5
 ) (d:/texlive/2021/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.chr
 File: UTF8.chr 2021/10/16 4.8.5
 )
-LaTeX Font Info:    Trying to load font information for C70+bkai on input line 87.
+LaTeX Font Info:    Trying to load font information for C70+bkai on input line 88.
  (d:/texlive/2021/texmf-dist/tex/latex/cjk/texinput/UTF8/c70bkai.fd
 File: c70bkai.fd 2021/10/16 4.8.5
 ) (d:/texlive/2021/texmf-dist/tex/latex/cjk/texinput/UTF8/c70bkai.fdx
@@ -602,44 +602,40 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8.40009> not available
 
 
 LaTeX Font Warning: Font shape `C70/bkai/b/n' undefined
-(Font)              using `C70/bkai/m/n' instead on input line 5.
+(Font)              using `C70/bkai/m/n' instead on input line 2.
 
-)
+[2])
 \tf@toc=\write3
 \openout3 = `templete.toc'.
 
- [2] (tmp/templete.lot)
-\tf@lot=\write4
-\openout4 = `templete.lot'.
-
- [3] (tmp/templete.lof)
-\tf@lof=\write5
-\openout5 = `templete.lof'.
-
- [4] [5]
+ [3]
 Chapter 1.
+
+Overfull \hbox (57.2149pt too wide) in paragraph at lines 186--187
+[]\C70/bkai/m/n/14/62 K \C70/bkai/m/n/14/8a ž \C70/bkai/m/n/14/30 ^^A \C70/bkai/b/n/14/6a _ \C70/bkai/m/n/14/56 h \C70/bkai/b/n/14/5b x \C70/bkai/m/n/14/7f Ò \C70/bkai/m/n/14/30 ^^A \C70/bkai/m/n/14/6d ñ \C70/bkai/m/n/14/5e ¦ \C70/bkai/b/n/14/5b x \C70/bkai/m/n/14/7f Ò \C70/bkai/m/n/14/30 ^^A\OT1/ptm/m/n/14 Openpose\C70/bkai/m/n/14/30 ^^A\OT1/ptm/m/n/14 Transformer\C70/bkai/m/n/14/30 ^^A\OT1/ptm/m/n/14 CNN\C70/bkai/m/n/14/30 ^^A\OT1/ptm/m/n/14 LSTM\C70/bkai/m/n/14/30 ^^A\OT1/ptm/m/n/14 Grad-
+ []
+
 [1
 
-]
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 205.
- (d:/texlive/2021/texmf-dist/tex/latex/psnfss/ts1ptm.fd
-File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-) [2] [3]
-Overfull \hbox (371.20865pt too wide) in paragraph at lines 214--215
-[]\OT1/ptm/m/n/14 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
- []
-
-
-Overfull \hbox (371.20865pt too wide) in paragraph at lines 217--218
-[]\OT1/ptm/m/n/14 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
- []
-
-[4]
+] [2]
 Chapter 2.
+<demo.jpg, id=163, 235.88126pt x 214.8025pt>
+File: demo.jpg Graphic file (type jpg)
+<use demo.jpg>
+Package pdftex.def Info: demo.jpg  used on input line 206.
+(pdftex.def)             Requested size: 216.81pt x 197.43715pt.
+[3
+
+ <./demo.jpg>] [4]
+Chapter 3.
 [5
 
-] [6]
-Chapter 3.
+]
+Chapter 4.
+[6
+
+]
+Chapter 5.
 [7
 
 ] [8
@@ -658,18 +654,18 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 7040 strings out of 478287
- 106554 string characters out of 5850749
- 415984 words of memory out of 5000000
- 24908 multiletter control sequences out of 15000+600000
- 516828 words of font info for 155 fonts, out of 8000000 for 9000
+ 7336 strings out of 478287
+ 111621 string characters out of 5850749
+ 414984 words of memory out of 5000000
+ 25144 multiletter control sequences out of 15000+600000
+ 531046 words of font info for 204 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 56i,9n,73p,692b,1000s stack positions out of 5000i,500n,10000p,200000b,80000s
-{d:/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}<d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu30.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu4e.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu4f.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu50.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu51.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu52.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu53.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu54.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu55.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu56.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu57.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu58.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu59.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu5b.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu5c.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu5d.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu5e.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu5f.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu60.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu61.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu62.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu63.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu65.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu66.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu67.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu69.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu6a.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu6b.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu6c.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu6d.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu6e.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu6f.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu70.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu71.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu72.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu73.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu75.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu76.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu78.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu79.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu7a.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu7b.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu7c.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu7d.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu7f.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu80.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu81.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu82.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu88.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu89.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu8a.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu8b.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu8c.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu8d.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu8e.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu8f.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu90.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu91.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu93.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu95.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu96.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu97.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu98.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu9a.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiuff.pfb><d:/texlive/2021/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><d:/texlive/2021/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on tmp/templete.pdf (18 pages, 334259 bytes).
+ 56i,9n,73p,626b,1039s stack positions out of 5000i,500n,10000p,200000b,80000s
+{d:/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}<d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu25.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu30.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu4e.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu4f.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu50.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu51.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu52.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu53.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu54.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu55.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu56.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu57.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu58.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu59.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu5b.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu5c.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu5d.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu5e.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu5f.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu60.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu61.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu62.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu63.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu64.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu65.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu66.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu67.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu68.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu69.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu6a.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu6b.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu6c.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu6d.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu6e.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu6f.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu70.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu71.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu72.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu73.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu74.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu75.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu76.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu78.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu79.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu7a.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu7b.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu7c.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu7d.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu7f.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu80.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu81.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu82.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu86.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu88.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu89.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu8a.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu8b.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu8c.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu8d.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu8e.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu8f.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu90.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu91.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu93.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu95.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu96.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu97.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu98.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu9a.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu9e.pfb><d:/texlive/2021/texmf-dist/fonts/type1/arphic/bkaiu/bkaiuff.pfb><d:/texlive/2021/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><d:/texlive/2021/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
+Output written on tmp/templete.pdf (16 pages, 396742 bytes).
 PDF statistics:
- 465 PDF objects out of 1000 (max. 8388607)
- 243 compressed objects within 3 object streams
+ 496 PDF objects out of 1000 (max. 8388607)
+ 257 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 261 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 290 words of extra memory for PDF output out of 10000 (max. 10000000)
 

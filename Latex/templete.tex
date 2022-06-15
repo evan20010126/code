@@ -1,29 +1,30 @@
 \documentclass[12pt,a4paper]{report}
+
 \usepackage{CJKutf8}
 %:::::::::::::::::::::::::::::::::::::::::::::::::
 % \usepackage{xeCJK}
     % \setCJKmainfont{標楷體}
 %:::::::::::::::::::::::::::::::::::::::::::::::::
-    \usepackage{graphicx}
-    \usepackage{amsmath}
-    \usepackage{fancyhdr}
-    \usepackage{cite}
-    \usepackage{framed}
-    \usepackage{a4wide}
-    \usepackage{float}
-    \usepackage{blindtext}
-    \usepackage{multicol}
-    %The below Section make chapter and its name to center of the page
-    \usepackage{blindtext}
-    \usepackage{xpatch}
-    \usepackage{mathptmx}
-    \usepackage{geometry}
-    \geometry{
-        right=25mm,
-        left=35mm,
-        top=25mm,
-        bottom=25mm,
-        }
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{fancyhdr}
+\usepackage{cite}
+\usepackage{framed}
+\usepackage{a4wide}
+\usepackage{float}
+\usepackage{blindtext}
+\usepackage{multicol}
+%The below Section make chapter and its name to center of the page
+\usepackage{blindtext}
+\usepackage{xpatch}
+\usepackage{mathptmx}
+\usepackage{geometry}
+\geometry{
+    right=25mm,
+    left=35mm,
+    top=25mm,
+    bottom=25mm,
+    }
 \usepackage{indentfirst}
 \setlength{\parindent}{24pt}
 
@@ -148,77 +149,75 @@
     % Contents
     \tableofcontents %This command used for index.
     \newpage
-    \listoftables
+    % \listoftables
 
-    \addcontentsline{toc}{chapter}{List of Figures}
+    % \addcontentsline{toc}{chapter}{List of Figures}
 
-    \newpage
-    \listoffigures
-    \addcontentsline{toc}{chapter}{List of Tables}
+    % \newpage
+    % \listoffigures
+    % \addcontentsline{toc}{chapter}{List of Tables}
 
 
 
-    \newpage
-    \begin{center}
-        \textbf{LIST OF SYMBOLS, ABBREVIATIONS AND NOMENCLATURE}
-    \end{center}
-    \addcontentsline{toc}{chapter}{List of Symbols, abbreviations}
+    % \newpage
+    % \begin{center}
+    %     \textbf{LIST OF SYMBOLS, ABBREVIATIONS AND NOMENCLATURE}
+    % \end{center}
+    % \addcontentsline{toc}{chapter}{List of Symbols, abbreviations}
 
-    \begin{itemize}
-        \item[]\textbf{ Sample}  : Sample Text
-    \end{itemize}
+    % \begin{itemize}
+    %     \item[]\textbf{ Sample}  : Sample Text
+    % \end{itemize}
 
-    \vspace{2cm}
-    \begin{center}
-    \end{center}
-    % \thispagestyle{empty}
+    % \vspace{2cm}
+    % \begin{center}
+    % \end{center}
+    % % \thispagestyle{empty}
 
 
     \newpage
 
     \pagenumbering{arabic}
+
     \chapter{緒論}
 
-    \section{研究背景}
+    \section{關鍵詞}
+    \par
+    手語、機器學習、深度學習、Openpose、Transformer、CNN、LSTM、Grad-cam
+
+    \section{研究背景與目標}
     \par
     手語是聾啞人士很重要的溝通方式，生活中難免碰到一些聾啞人士，想要與他們交流需先學習手語，但網路上現有的資源幾乎都是用影片學習的方式，沒有可以自我檢視的系統，因此本專題設計一套主要提供手語教學、測驗、偵錯的功能的系統，提供給想要入門手語的初學者一個學習的平台。
 
-    \section{研究目標}
+    \section{現有相關研究概況}
     \par
-    在現今的手語辨認技術上，已經可以利用深度學習辨識出動態的手語片段，但無偵測錯誤的功能。
+    對於手語辨認技術，早期採用Dynamic time warping(DTW)的方式來辨識手語，其方法是比對兩個時間序列的最小距離與利用K-Nearest Neighbors演算法判斷辨識結果，缺點是時間複雜度為兩個時間序列的長度的乘積──O(mn)，當時間序列長度越長所需時間越長，而在現今的手語辨認技術上，已經可以利用深度學習辨識出動態的手語片段，但無偵測錯誤的功能。
+    % Dynamic time wrapping
+    % 缺點1: 缺點是容易因相同的手語片段序列長度不同，，進而產生誤差，
+    \par
+
+
+    \section{章節概述}
+    \par
+
+    \chapter{架構與方法設計}
+    \section{系統概述與流程圖}
+    \par
+    \includegraphics[width=3in]{demo.jpg}\\
+    本系統將架構分為三部分:
+    \begin{enumerate}
+        \item Openpose
+        \item 神經網路
+        \item Grad-Cam
+    \end{enumerate}
+
+    \section{資料前處理}
+    \section{特徵擷取}
+    \section{方法設計}
     \par
     本專題利用三種神經網路架構(Transformer、CNN、LSTM)實踐辨識手語，並分別應用Grad-Cam演算法於時間序列資料達到錯誤偵測的功能。探討這三種不同的神經網路模型對於二維時間序列資料分類的準確度，與分析對於三種模型結合Grad-Cam的效果，研究出最適合本專題應用的神經網路架構。
 
-
-    \section{Past Efforts}
-    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-
-    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-
-
-
-
-
-
-    \section{New Concept}
-    \begin{itemize}
-        \item Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        \item Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        \item Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-    \end{itemize}
-
-    \section{What}
-    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-
-    \section{How}
-    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-
-    \section{Rest Sections}
-    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-
-    \chapter{BACKGROUND}
-    \section{What is ........}
-    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    \section{神經網路}
     \begin{figure}[H]
         \centering
         % \includegraphics[scale=0.6]{dtu.jpg}
@@ -245,9 +244,32 @@
         }
     \end{table}
 
+    \chapter{系統實驗}
+    \section{實驗設計}
 
-    \chapter{CONCLUSION}
-    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    \begin{enumerate}
+        \item 手勢類別辨識
+              %八個類別(混淆矩陣?)、訓練樣本數、訓練樣本來自人數
+
+        \item 特徵擷取工具
+              %比較openpose和mediapipe兩種工具對於手部辨識的精準度
+
+        \item 錯誤偵測精準度判斷
+              %幾個手勢平均準度
+              %指出哪個畫面沒有演好(誰來決定) 如何用側資驗證我有這個功能 甚麼指標稱做恰當 40個畫面 第五個畫面沒筆好 到底對不對 => 論文(其他人怎麼做) 獨創(合不合理) 資料的收集閱讀
+
+    \end{enumerate}
+
+    \section{效能評估與成果}
+
+    \chapter{模組設計描述}
+    \section{檔案名稱}
+    \section{函式原型宣告}
+    \section{模組功能說明}
+    \section{參數說明}
+
+    \chapter{結論與討論}
+
 
     \addcontentsline{toc}{chapter}{Appendices}
     \chapter*{\centering \large Appendix\markboth{Appendix}{Appendix}}
