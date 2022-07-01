@@ -1,0 +1,303 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Tic-tac-toe</title>
+    <style type="text/CSS">
+        table, th, td{
+				border: 1px solid black;
+				border-collapse: collapse;
+				font-family: Helvetica;
+				font-size: 48px;
+        }
+        caption {
+            color: navy;
+        }
+        tbody tr {
+            height: 100px;
+        }
+        td {
+            width: 100px;
+            text-align: center;
+        }
+    </style>
+    <script>
+        var arr2D = [["","",""],
+                    ["","",""],
+                    ["","",""]];
+        function delta(){
+            var count = 0;
+            for(var i = 0; i<3; i++){
+                for (var j = 0; j<3; j++){
+                    if (arr2D[i][j] == "O" || arr2D[i][j] == "X"){
+                        count++;
+                    }
+                }
+            }
+            // console.log(arr2D[0][0]);
+            // console.log(arr2D[0][1]);
+            // console.log(arr2D[0][2]);
+            if ((arr2D[0][0] == "O" && arr2D[0][1] == "O"  && arr2D[0][2] == "O")|| (arr2D[1][0] == "O" && arr2D[1][1] == "O"  && arr2D[1][2] == "O") || (arr2D[2][0] == "O" && arr2D[2][1] == "O"  && arr2D[2][2] == "O") || (arr2D[0][0] == "O" && arr2D[1][1] == "O"  && arr2D[2][2] == "O") || (arr2D[0][2] == "O" && arr2D[1][1] == "O"  && arr2D[2][0] == "O") || (arr2D[0][0] == "O" && arr2D[1][0] == "O"  && arr2D[2][0] == "O") || (arr2D[0][1] == "O" && arr2D[1][1] == "O"  && arr2D[2][1] == "O") || (arr2D[0][2] == "O" && arr2D[1][2] == "O"  && arr2D[2][2] == "O")){
+                setTimeout(function(){window.alert("O wins!");} , 500);
+            }else if((arr2D[0][0] == "X" && arr2D[0][1] == "X"  && arr2D[0][2] == "X")|| (arr2D[1][0] == "X" && arr2D[1][1] == "X"  && arr2D[1][2] == "X") || (arr2D[2][0] == "X" && arr2D[2][1] == "X"  && arr2D[2][2] == "X") || (arr2D[0][0] == "X" && arr2D[1][1] == "X"  && arr2D[2][2] == "X") || (arr2D[0][2] == "X" && arr2D[1][1] == "X"  && arr2D[2][0] == "X") || (arr2D[0][0] == "X" && arr2D[1][0] == "X"  && arr2D[2][0] == "X") || (arr2D[0][1] == "X" && arr2D[1][1] == "X"  && arr2D[2][1] == "X") || (arr2D[0][2] == "X" && arr2D[1][2] == "X"  && arr2D[2][2] == "X")){
+                setTimeout(function(){window.alert("X wins!");} , 500);
+            }else if(count == 9){
+                setTimeout(function(){window.alert("Tie!");} , 500);
+            }
+        }            
+        function start(){
+            var tds = document.getElementsByTagName("td");
+            tds[0].onclick = setup0;
+            tds[1].onclick = setup1;
+            tds[2].onclick = setup2;
+            tds[3].onclick = setup3;
+            tds[4].onclick = setup4;
+            tds[5].onclick = setup5;
+            tds[6].onclick = setup6;
+            tds[7].onclick = setup7;
+            tds[8].onclick = setup8;
+            
+            //document.getElementById("new").onclick = reset_fun;
+        }
+
+        var round = 1;
+        var boo0 = true;
+        var record = [];
+        function setup0(){
+            var doms = document.getElementsByTagName("td");
+            if(boo0 == true){
+                if (round%2 == 1){ //奇數
+                    arr2D[0][0] = "X";
+                    doms[0].innerHTML = "X";
+                    
+                }else{
+                    arr2D[0][0] = "O";
+                    doms[0].innerHTML = "O";
+                }
+                round++;
+            }
+            doms[0].onclick = boo0_fun;
+            delta();
+            record.push(0);
+        }
+
+        function boo0_fun(){
+            window.alert("Not allowed");
+            boo0 = false;
+        }
+        var boo1 = true;
+        function setup1(){
+            var doms = document.getElementsByTagName("td");
+            if(boo1 == true){
+                if (round%2 == 1){ //奇數
+                    arr2D[0][1] = "X";
+                    doms[1].innerHTML = "X";
+                }else{
+                    arr2D[0][1] = "O";
+                    doms[1].innerHTML = "O";
+                }
+                round++;
+            }
+            doms[1].onclick = function(){ window.alert("Not allowed"); boo1 = false};
+            delta();
+            record.push(1);
+        }
+        var boo2 = true;
+        function setup2(){
+            var doms = document.getElementsByTagName("td");
+            if(boo2 == true){
+                if (round%2 == 1){ //奇數
+                    arr2D[0][2] = "X";
+                    doms[2].innerHTML = "X";
+                }else{
+                    arr2D[0][2] = "O";
+                    doms[2].innerHTML = "O";
+                }
+                round++;
+            }
+            doms[2].onclick = function(){ window.alert("Not allowed"); boo2 = false};
+            delta();
+            record.push(2);
+        }
+        var boo3 = true;
+        function setup3(){
+            var doms = document.getElementsByTagName("td");
+            if(boo3 == true){
+                if (round%2 == 1){ //奇數
+                    arr2D[1][0] = "X";
+                    doms[3].innerHTML = "X";
+                }else{
+                    arr2D[1][0] = "O";
+                    doms[3].innerHTML = "O";
+                }
+                round++;
+            }
+            doms[3].onclick = function(){ window.alert("Not allowed"); boo3 = false};
+            delta();
+            record.push(3);
+        }
+        var boo4 = true;
+        function setup4(){
+            var doms = document.getElementsByTagName("td");
+            if(boo4 == true){
+                if (round%2 == 1){ //奇數
+                    arr2D[1][1] = "X";
+                    doms[4].innerHTML = "X";
+                }else{
+                    arr2D[1][1] = "O";
+                    doms[4].innerHTML = "O";
+                }
+                round++;
+            }
+            doms[4].onclick = function(){ window.alert("Not allowed"); boo4 = false};
+            delta();
+            record.push(4);
+        }
+        var boo5 = true;
+        function setup5(){
+            var doms = document.getElementsByTagName("td");
+            if(boo5 == true){
+                if (round%2 == 1){ //奇數
+                    arr2D[1][2] = "X";
+                    doms[5].innerHTML = "X";
+                }else{
+                    arr2D[1][2] = "O";
+                    doms[5].innerHTML = "O";
+                }
+                round++;
+            }
+            doms[5].onclick = function(){ window.alert("Not allowed"); boo5 = false};
+            delta();
+            record.push(5);
+        }
+        var boo6 = true;
+        function setup6(){
+            var doms = document.getElementsByTagName("td");
+            if(boo6 == true){
+                if (round%2 == 1){ //奇數
+                    arr2D[2][0] = "X";
+                    doms[6].innerHTML = "X";
+                }else{
+                    arr2D[2][0] = "O";
+                    doms[6].innerHTML = "O";
+                }
+                round++;
+            }
+            doms[6].onclick = function(){ window.alert("Not allowed"); boo6 = false};
+            delta();
+            record.push(6);
+        }
+        var boo7 = true;
+        function setup7(){
+            var doms = document.getElementsByTagName("td");
+            if(boo7 == true){
+                if (round%2 == 1){ //奇數
+                    arr2D[2][1] = "X";
+                    doms[7].innerHTML = "X";
+                }else{
+                    arr2D[2][1] = "O";
+                    doms[7].innerHTML = "O";
+                }
+                round++;
+            }
+            doms[7].onclick = function(){ window.alert("Not allowed"); boo7 = false};
+            delta();
+            record.push(7);
+        }
+        var boo8 = true;
+        function setup8(){
+            var doms = document.getElementsByTagName("td");
+            if(boo8 == true){
+                if (round%2 == 1){ //奇數
+                    arr2D[2][2] = "X";
+                    doms[8].innerHTML = "X";
+                }else{
+                    arr2D[2][2] = "O";
+                    doms[8].innerHTML = "O";
+                }
+                round++;
+            }
+            doms[8].onclick = function(){ window.alert("Not allowed"); boo8 = false}; //當執行此click後 後面的敘述全部會被省略
+            delta();
+            record.push(8);
+        }
+        function replay(){
+            var tds = document.getElementsByTagName("td");
+            console.log(record);
+            for (var i = 0 ; i < 9; i++){
+                tds[i].innerHTML = "";
+            }
+            var j = 0;
+            if (record.length >= 1)
+                setTimeout( replay_set , 0, j, record);
+            j++;
+            if (record.length >= 2)
+                setTimeout( replay_set , 1000, j, record);
+            j++;
+            if (record.length >= 3)
+                setTimeout( replay_set , 2000, j, record);
+            j++;
+            if (record.length >= 4)
+                setTimeout( replay_set , 3000, j, record);
+            j++;
+            if (record.length >= 5)
+                setTimeout( replay_set , 4000, j, record);
+            j++;
+            if (record.length >= 6)
+                setTimeout( replay_set , 5000, j, record);
+            j++;
+            if (record.length >= 7)
+                setTimeout( replay_set , 6000, j, record);
+            j++;
+            if (record.length >= 8)
+                setTimeout( replay_set , 7000, j, record);
+            j++;
+            if (record.length >= 9)
+                setTimeout( replay_set , 8000, j, record);
+        }
+        function replay_set(j, record){
+            var tds = document.getElementsByTagName("td");
+            if (j%2 == 0){
+                tds[record[j]].innerHTML = "X";
+            }else{
+                tds[record[j]].innerHTML = "O";
+            }
+        }
+        window.addEventListener("load", start);
+    </script>
+</head>
+
+<body>
+    <table id="table">
+        <caption>Tic-Tac-Toe</caption>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3">
+                    <input id="replay" type="button" value="Replay" onclick="replay()">
+                    <input id="new" type="button" value="New Game" onclick="location.reload()">
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+
+</body>
+
+</html>

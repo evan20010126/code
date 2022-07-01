@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>台北市公園景點瀏覽器</title>
+    <style type="text/css">
+        body {
+            font-size: 18px;
+            font-family: Helvetica, "Microsoft YaHei", "LiHei Pro", TW-Kai;
+        }
+
+        input {
+            font-size: 14px;
+            font-family: Helvetica, "Microsoft YaHei", "LiHei Pro", TW-Kai;
+        }
+
+        div {
+            box-sizing: border-box;
+            width: 30%;
+            height: 300px;
+            border: 1px solid dimgray;
+            float: left;
+            padding: 10px;
+            margin: 5px;
+            overflow: auto;
+            text-align: justify;
+            box-shadow: 4px 4px 6px dimgray;
+        }
+
+        img {
+            float: left;
+            margin-right: 10px;
+        }
+    </style>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+    <script type="text/javascript">
+
+        //var jsonUrl = "park.json";
+        let jsonUrl = "https://api.myjson.com/bins/1d5uqm";
+
+        $.getJSON(jsonUrl, function (data) {
+            $("#loading").remove();
+            for (var index in data) {
+
+                let content =
+                    "<div class='news'>" +
+                    "<h2>" + data[index].ParkName + " - " + data[index].Name + "</h2>" +
+                    "<a href='https://www.google.com.tw/maps?um=1&ie=UTF-8&sa=X&q=" + data[index].ParkName + "' target='_blank'>" +
+                    "[連結至地圖]</a>" +
+                    "<a href='https://www.google.com.tw/search?tbm=isch&q=" + data[index].ParkName + "+" + data[index].Name + "' target='_blank'>" +
+                    "[連結至圖片]</a><p>" +
+                    data[index].Introduction +
+                    "</p></div>";
+                $("body").append(content);
+            }
+        });
+
+        $(document).ready(function () {
+
+            $("#search").on("click", function () {
+                let value = $("#myInput").val().toLowerCase();
+                $("div").each(function () {
+                    if ($(this).text().toLowerCase().indexOf(value) > -1)
+                        $(this).show();
+                    else
+                        $(this).hide();
+
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <p>輸入文字進行過濾:
+        <input id="myInput" type="text" placeholder="Search..">
+        <input id="search" type="button" value="過濾">
+    </p>
+    <img id="loading" src="loading.gif" width="400" />
+</body>
+
+</html>

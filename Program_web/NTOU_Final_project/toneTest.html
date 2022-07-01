@@ -1,0 +1,445 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>tone.js</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://unpkg.com/tone@13.8.25/build/Tone.js"></script>
+
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">    
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  	<!--字型庫-->
+  	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Faster+One&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Merienda+One&display=swap" rel="stylesheet">
+
+  	<style>
+	.fasterfont	{
+		font-family: 'Faster One', cursive;
+	}
+	.meriendaone	{
+		font-family: 'Merienda One', cursive;
+	}
+  	.elite	{
+  		font-family: 'Special Elite', cursive;
+  	}
+	.fredericka 	{
+		font-family: 'Fredericka the Great', cursive;
+	}
+	.caveatbrush 	{
+		font-family: 'Caveat Brush', cursive;
+	}
+	.sketch 	{
+		font-family: 'Cabin Sketch', cursive;
+	}
+	.piano 	{
+		overflow: scroll;
+	}
+	ul 	{
+		list-style: none;
+		display: flex;
+	}
+	ul .w_key  {
+		box-sizing: border-box;
+	   position: relative;
+	   display: flex;
+	   width: 60px;
+	   height: 180px;
+	   border: 1px solid black;
+	   border-right: none;
+	   background: #fffff0;
+	   border-radius: 5px;
+	   box-shadow: 0px 2px 5px grey;
+	   cursor: pointer;
+	   justify-content: center;
+	   align-items: flex-end;
+	   padding-bottom: 10px;
+	   font-weight: bold;
+	}
+	ul .w_key:last-child {
+   	   border-right: 1px solid black;
+	}
+	ul .w_key:hover	{
+		background: rgba(18, 205, 255, 0.3);
+	}
+	ul .b_key:hover	{
+		background: rgba(18, 205, 255);
+	}
+	ul .b_key {
+		box-sizing: border-box;
+	   position: relative;
+	   display: flex;
+	   top: -1px;
+	   width: 37px;
+	   height: 100px;
+	   background: black;
+	   border-radius: 5px;
+	   box-shadow: 0px 3px 5px grey;
+	   z-index: 999;
+	   justify-content: center;
+	   align-items: flex-end;
+	   padding-bottom: 10px;
+	   color: white;
+	}
+	ul .correct {
+	   background: rgba(34, 153, 84, 0.3);
+	}
+	ul .wrong {
+	   background: rgba(231, 76, 60, 0.3);
+	}
+	.notename {
+		font-size: 10px;
+	}
+	h1:hover{
+		color: rgba(255,100,100,0.7);
+	}
+	p:hover{
+    	color: rgba(18, 205, 255, 0.7);
+    }
+	#page2_btn{
+    	font-family: '標楷體', cursive;
+    }
+    #page2_btn1{
+    	font-family: '標楷體', cursive;
+    }
+    #page2_btn2{
+    	font-family: '標楷體', cursive;
+    }
+	</style>
+	<script>
+    	function showModal() {
+    	     $('#my_ddd').modal('show'); 
+    	}
+	</script>
+	<script>
+		//Chrome Browser will put AudioContext in "suspended" state by default.
+		//意思是說需要使用者做出動作產生event才允許撥放
+		var _doc = document;
+		var note = ["C2","C#2","D2","D#2","E2","F2","F#2","G2","G#2","A2","A#2","B2",
+			"C3","C#3","D3","D#3","E3","F3","F#3","G3","G#3","A3","A#3","B3",
+			"C4","C#4","D4","D#4","E4","F4","F#4","G4","G#4","A4","A#4","B4"];
+		var random;
+		var triad = []; //題目
+		var user_answer = []; //使用者的嘗試
+		function play_Major()
+		{
+			const synth = new Tone.Synth().toMaster();
+			const now = Tone.now();
+			random = Math.floor(Math.random()*28);
+			triad[0] =	note[random];
+			triad[1] = 	note[random+4];
+			triad[2] =  note[random+7];
+			synth.triggerAttackRelease(triad[0], "8n", now);
+			synth.triggerAttackRelease(triad[1], "8n", now + 0.5);
+			synth.triggerAttackRelease(triad[2], "8n", now + 1);
+			document.getElementById("repeat").disabled = false;
+			document.getElementById("validate").disabled = false;
+			console.log(triad);
+		}
+		function play_Minor(){
+			const synth = new Tone.Synth().toMaster();
+			const now = Tone.now();
+			random = Math.floor(Math.random()*28);
+			triad[0] =	note[random];
+			triad[1] = 	note[random+3];
+			triad[2] =  note[random+7];
+			synth.triggerAttackRelease(triad[0], "8n", now);
+			synth.triggerAttackRelease(triad[1], "8n", now + 0.5);
+			synth.triggerAttackRelease(triad[2], "8n", now + 1);
+			document.getElementById("repeat").disabled = false;
+			document.getElementById("validate").disabled = false;
+			console.log(triad);
+		}
+		function repeat(note_arr){ 
+			const synth = new Tone.Synth().toMaster();
+			const now = Tone.now();
+			synth.triggerAttackRelease(note_arr[0], "8n", now);
+			synth.triggerAttackRelease(note_arr[1], "8n", now + 0.5);
+			synth.triggerAttackRelease(note_arr[2], "8n", now + 1);
+		}
+
+		function validate()   // 判斷 question & user_answer
+		{
+			//user_answer[user_answer.length-3] / user_answer[user_answer.length-2] /user_answer[user_answer.length-1]
+			var correct = false;
+			if(user_answer[0] == triad[0])
+			{
+				if (user_answer[1] == triad[1]) 
+				{
+					if (user_answer[2] == triad[2]) 
+					{
+						//user 答對
+						correct = true;
+						track_history(correct);  //user答對了
+					}
+				}
+			}else
+			{
+				track_history(correct); //user是錯的答案
+			}
+		}
+		// function changeFont(choice)
+		// {	
+		// 	var select = _doc.getElementById('fonts');//選到的字形
+		// 	var previewArea = _doc.getElementById('font_prev'); //作用區
+		// 	previewArea.setAttribute('class',select.value);
+		// }
+
+		function track_history(correct)
+		{
+			if (correct) 
+			{
+				for (var i = 0; i < user_answer.length; i++) 
+				{
+					_doc.getElementById(user_answer[i]).classList.add("correct");
+				}
+			}else
+			{
+				for (var i = 0; i < triad.length; i++) {
+					//$("triad[i]").classList.add("active");
+					_doc.getElementById(user_answer[i]).classList.add("wrong");
+					_doc.getElementById(triad[i]).classList.add("correct");
+				}
+			}
+			repeat(user_answer);
+		}
+		function render_piano()
+		{
+			//var piano_keys = 12;  //鋼琴的琴鍵
+			var draw_piano = _doc.getElementById("piano");
+			//#1,3,6,8,10是黑鍵
+			draw_piano.innerHTML = "";
+			for (var i = 0; i < note.length; i++) {
+				var key;
+				if ((i%12)==1||(i%12)==3||(i%12)==6||(i%12)==8||(i%12)==10)  //黑鍵
+				{
+					key = _doc.createElement("li");
+					key.classList.add("b_key");
+				}else
+				{
+					key = _doc.createElement("li");
+					key.classList.add("w_key");
+				}
+					key.dataset.note = note[i];
+					key.id = note[i];
+					key.innerHTML = "<span class ='notename'>"+ note[i] + "</span>";
+					draw_piano.appendChild(key);
+			}
+
+		}
+		function reset()
+		{
+			render_piano(); //把上一次的紀錄清掉
+		}
+		function init()
+		{
+			//handle button
+			var maj_btn = _doc.getElementById('maj');
+			maj_btn.addEventListener("click", play_Major, false);
+			var min_btn = _doc.getElementById('min');
+			min_btn.addEventListener("click", play_Minor, false);
+			var rep_btn = _doc.getElementById('repeat');
+			rep_btn.addEventListener("click", function(){ repeat(triad);}, false);
+			var val_btn = _doc.getElementById('validate');
+			val_btn.addEventListener("click", validate, false);
+			var reset_btn = _doc.getElementById('reset');
+			reset_btn.addEventListener("click", reset, false);
+			//handle piano
+			const keyboard = _doc.getElementById("piano");
+			const synth = new Tone.Synth().toMaster();
+			const now = Tone.now();
+
+			render_piano(); //
+			//按下鋼琴鍵時的事件
+			keyboard.addEventListener("mousedown", e => {
+				synth.triggerAttack(e.target.dataset.note);  
+
+				if (e.target.dataset.note!= undefined)    
+				{	
+					if (user_answer.length >= 3) 
+					{
+						user_answer.shift();
+						user_answer.push(e.target.dataset.note);
+					}else
+					{
+						user_answer.push(e.target.dataset.note);
+					}
+					console.log(user_answer);
+				}
+			});
+			keyboard.addEventListener("mouseup", e => {
+				synth.triggerRelease();
+			})
+
+			$("#page2_btn").click(function(){
+  				$("#page2").slideToggle(1000);
+			});
+
+			$("#page2_btn1").click(function(){
+  				$("#page21").slideToggle(1000);
+			});
+
+			$("#page2_btn2").click(function(){
+  				$("#page22").slideToggle(1000);
+			});
+			
+		}
+		window.addEventListener("load",init,false);
+  	</script>
+</head>
+<body>
+	<nav class="navbar navbar-inverse">
+		<div class="container">
+			<div align="center"><a class="navbar-brand" href="index.html" style="font-family: 'Ma Shan Zheng', cursive;">Entrance</a></div>
+			<div align="center"><a class="navbar-brand" href="toneTest.html" style="font-family: 'Ma Shan Zheng', cursive;">Training</a></div>
+		</div>
+	</nav>
+	<div class="jumbotron text-center bg-dark text-white" style="background-color: rgb(30,30,30); color: white;">
+	 	<h1 class= "fasterfont">Music For Beginners</h1>
+	 	<blockquote class = "blockquote">
+		 	<p class= "elite">Without music, life would be a mistake
+			<footer class = "blockquote-footer">Friedrich Nietzsche</footer>
+			</p>
+	  	</blockquote>
+	</div>
+
+
+	<!---->
+	<div class="container">
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="#tab1" data-toggle="tab">Practice</a></li>	
+			<li><a href="#tab2" data-toggle="tab">Channel</a></li>
+		</ul>
+			
+		<div class="tab-content">
+			<div class="tab-pane fade in active" id="tab1">
+				<div class="panel panel-info" style="text-align: center;">
+					<div class="panel-heading">
+						<h1>辨別:大和弦&小和弦</h1>
+					</div>
+					<div class="panel-body">
+						<h3>簡單介紹</h3>
+						一個音階的聲音是由該音階中特定的音程關係所決定的。<br>
+						大調和小調音階是最常見的兩種音階，它們常被運用於各類型音樂中。<br>
+						大調音階包含C,D,E,F,G,A,B 七個音符（第八個音開始循環,即俗稱的'高八度'）<br>
+						鋼琴上琴鍵可以想像成是距離(音符和音符之間的音程)<br>
+						C到D之間距離是2(C-C#-D),即是一個全音。<br>
+						E到F之間沒有間隔,即是半音。<br>
+						C-> C 一度 C->D 二度 C->E 三度<br>
+						大和弦 C (C E G) C-D-E 三度音 <br>
+						小和弦Cm (C Eb G) C-D-Eb 小三度音
+						
+                       			</div>
+					<div class="panel-footer">
+						<h3>Button:</h3>
+                        			<button class="btn btn-primary" id = "maj">major chord</button>
+						<button class="btn btn-info" id = "min">minor chord</button>
+						<button class="btn btn-success" id = "repeat" disabled="true">repeat</button>
+						<button class="btn btn-danger" id = "validate">check</button>
+						<button class="btn btn-danger" id = "reset">Reset</button>
+						<button class="btn btn-warning" onclick="showModal()">使用說明</button>
+						<!-- <p id = "showanswer"></p> -->
+                    			</div>			
+				</div>
+					
+			</div>
+
+				
+			<div class="tab-pane fade" id="tab2" style="text-align: center;">
+				<div class="panel panel-warning">
+					<div class="panel-heading">
+						<h1>Youtube音樂分享</h1>
+					</div>
+					<div class="panel-body">
+						
+                        <h2 id = "page2_btn" style="background-color: rgba(255,100,0,0.3);">NiceChord NiceChord 好和弦 - 不可不知的基礎樂理</h2>
+                        <p id = "page2" style="display: none;">
+                        <iframe width="679" height="382" src="https://www.youtube.com/embed/QLDktqMxgmY?list=PLmVjZfPp5kiNVtlRBphjzBUIH_Xa15h08" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    	</p>
+
+                    	<h2 id = "page2_btn1" style="background-color: rgba(255,100,0,0.3);">十分鐘以內，一次搞懂所有的現代和弦代號！</h2>
+                        <p id = "page21" style="display: none;">
+                        <iframe width="679" height="382" src="https://www.youtube.com/embed/I0y2LY4sPZA?list=PLmVjZfPp5kiNVtlRBphjzBUIH_Xa15h08" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    	</p>
+                    	
+                    	<h2 id = "page2_btn2" style="background-color: rgba(255,100,0,0.3);">和弦有什麼功能？</h2>
+                        <p id = "page22" style="display: none;">
+                        <iframe width="679" height="382" src="https://www.youtube.com/embed/kMlJSwFAiTU?list=PLmVjZfPp5kiNVtlRBphjzBUIH_Xa15h08" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    	</p>
+
+                    </div>
+					<div class="panel-footer">
+                        
+                    </div>	
+				</div>		
+			</div>
+				
+				
+		</div>
+    </div>
+
+
+	<!---->
+	
+	<!--<canvas> 沒找到可以把畫出來的鍵轉成DOM的方法-->
+	<div class = "piano">
+		<ul id ="piano"><div width = "200">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></ul>
+	</div>
+	<!-- <div class="container">
+	  <div class="row">
+	    <div class="col-sm-4"> 
+	      <h3>下拉式選單</h3>
+	      <mark>beats,notes,chords,melodies</mark>
+	      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+	      
+	    </div>
+	    <div class="col-sm-8">
+		      <h3>內文</h3>
+			  <mark>keybord and other things to demo..</mark>
+			  <p>This is to show font styles.</p>
+		      <div class="form-group">
+				  <select class="form-control" id="fonts">
+				    <option value = "fasterfont">fasterfont</option>
+				    <option value = "meriendaone">meriendaone</option>
+				    <option value = "elite">elite</option>
+				    <option value = "fredericka">fredericka</option>
+				    <option value = "caveatbrush">caveatbrush</option>
+				    <option value = "sketch">sketch</option>
+				  </select>
+				  <button id= "font_btn">Select</button>
+		      	<p id = "font_prev" class="col-sm-8" >This is to show which font-style u choose..</p>
+			  </div>
+	    </div>
+	  </div>
+	</div> -->
+	<div class="modal" tabindex="-1" role="dialog" id="my_ddd">
+     <div class="modal-dialog" role="document"> 
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">使用說明</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button> 
+            </div>
+            <div class="modal-body">
+                                <p>"辨別:大和弦&小和弦"共有6個按鈕
+                                	<br>第一個按鈕major chord: 會隨機出題(為major chord的題目)
+                                	<br>第二個按鈕minor chord: 會隨機出題(為minor chord的題目)
+                                	<br>第三個按鈕repeat: 會重複最近的題目一次		
+                                	<br>第四個按鈕check: 確認答案
+					<br>第五個按鈕reset: 重置琴鍵
+                                	<br>第六個按鈕使用說明: 就是現在看到這個</p> 
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">我瞭解了！</button>
+            </div>
+       </div>
+   </div>
+</div>
+
+</body>
+</html>

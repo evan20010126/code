@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        p {
+            border: 1px solid black;
+            background-color: azure;
+            cursor: pointer;
+            width: 30%;
+            font-size: 20px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p id="p1">P01</p>
+    <p id="p2">P02</p>
+    <p id="p3">P03</p>
+    <p id="p4">P04</p>
+    <p id="p5">P05</p>
+    <p id="p6">P06</p>
+    <p id="p7">P07</p>
+    <p id="p8">P08</p>
+    <p id="p9">P09</p>
+    <p id="p10">P10</p>
+
+    <script>
+
+        for (var i = 1; i <= 10; ++i) {
+            document.getElementById("p" + i).onclick = function () {
+                alert('You clicked on: ' + i);
+            };
+        }
+
+        /*
+        // Using Self-Invoking Functions
+        for (var i = 1; i <= 10; ++i) {
+            (function (count) {
+                document.getElementById("p" + count).onclick = function () {
+                    alert('You clicked on: ' + count);
+                };
+            })(i);
+        }
+        */
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+RECUR	START	0
+MACROA  MACRO
+RDBUFF1 MACRO   &ADDR
+        LDA     &ADDR
+        MEND
+        MEND
+MACROX  MACRO
+RDBUFF2 MACRO   &ADDR
+        LDX     &ADDR
+        MEND
+        MEND
+FIRST   LDA     THREE
+        MACROX
+        MACROA
+        RDBUFF2 FIVE
+THREE   WORD    3
+FIVE    WORD    5
+        END     FIRST

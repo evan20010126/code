@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>00957202-HW2-1</title>
+    <style type="text/css">
+        body {
+            font-family: Perpetua;
+            font-size: 1.3em;
+        }
+        p::first-letter {
+            font-size: 1.5em;
+        }
+        input {
+            color: blue;
+            font-weight: 600;
+        }
+        /*label::first*/
+    </style>
+</head>
+
+<body>
+    
+    <form method="POST" action="http://140.121.150.92:8080/show-form-2.jsp" autocomplete = "on">
+        <p>
+            <label>Your name: <input type="text" autofocus name="fullname">
+            </label>
+        </p>
+        <p>
+            <label>Your email: <input type="email" required name="email">
+            </label>
+        </p>
+        <p>
+            <label>Your homepage's URL: <input type="url" name="url">
+            </label>
+        </p>
+        <p>
+            <label>Your birthday date: <input type="date" name = "date">
+            </label>
+        </p>
+        <p>
+            <label>Your favorate color: <input type="color" name = "color">
+            </label>
+        </p>
+        <p>
+            <label>Your Department: <input type="text" list = "Department" name="department">
+            <datalist id = "Department">
+                <option value = "Department of Aquaculture">
+                <option value = "Department of Bioscience and Biotechnology">
+                <option value = "Department of Communications, Navigation and Control Engineering">
+                <option value = "Department of Computer Science and Engineering">
+                <option value = "Department of Electrical Engineering
+">
+                <option value = "Department of Environmental Biology and Fisheries Science">
+                <option value = "Department of Food Science
+">
+                <option value = "Department of Harbor and River Engineering">
+                <option value = "Department of Marine Engineering">
+                <option value = "Department of Marine Environmental Informatics">
+                <option value = "Department of Mechanical and Mechatronic Engineering">
+                <option value = "Department of Merchant Marine
+">
+                <option value = "Department of Optoelectronics and Materials Technology">
+                <option value = "Department of Shipping and Transportation Management">
+                <option value = "Department of Systems Engineering and Naval Architecture">
+                <option value = "Department of Transportation Science">
+            </label>
+        </p>
+        <p>
+            <strong><em>Check off all of the characteristics that
+                    you enjoyed about the college:</em></strong><br />
+        </p>
+        <p>
+            <label><input type="checkbox" name="likes" value="Campus">Campus</label>
+            <label><input type="checkbox" name="likes" value="Students">Students</label>
+            <label><input type="checkbox" name="likes" value="Location">Location</label>
+        </p>
+        <p><strong><em>How did you become interested in
+                    our college?</em></strong><br />
+        </p>
+        <p>
+            <label><input type="radio" name="interest" value="Friends">Friends
+            </label>
+            <label><input type="radio" name="interest" value="Television">Television
+            </label>
+            <label><input type="radio" name="interest" value="Internet">Internet
+            </label>
+        </p>
+        <p>
+        </p>
+        <input type="submit" value="Submit" style="color: firebrick;">
+        <input type="reset" value="Clear" style="color:firebrick;">
+    </form>
+</body>
+
+</html>

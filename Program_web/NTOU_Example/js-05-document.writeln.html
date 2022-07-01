@@ -1,0 +1,25 @@
+<html>
+
+<head>
+	<script>
+		var name = prompt("Please input your name:");
+		document.writeln("<h2>Your Name: " + name + "</h2>");
+		function append() {
+			// window.alert(document.body.innerHTML);
+			document.writeln("<h2>Everything disappeared!</h2>");
+		}
+	</script>
+</head>
+
+<body>
+	<script>document.writeln("<h3>Welcome here!</h3>");</script>
+	<button id="btn">Click me!</button>
+	<script>
+		document.getElementById("btn").addEventListener("click", append, false);
+		var age = prompt("Please input your age:");
+		document.writeln("<h4>Your age: " + age + "</h4>");
+	</script>
+	<h4>This is a test page.</h4>
+</body>
+
+</html>

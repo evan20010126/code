@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Pin Pictures</title>
+	<style type="text/CSS">
+		div.nav {
+			border: 1px solid skyBlue;
+			margin-left: 3px;
+			padding: 3px;
+			float: left;
+		}
+		input, p, li {
+			font-family: Helvetica, "Microsoft YaHei", "LiHei Pro", TW-Kai;
+		}
+		li {
+			font-size: 12px;
+		}
+		img.picture {
+			position: absolute;
+		}
+		#place{
+			width: 600px;
+			height: 600px;
+		}
+	</style>
+	<script type="text/javascript">
+		function start(){
+			loading();
+			document.getElementById("addButton").addEventListener("click", add);
+			document.getElementById("removeAllButton").addEventListener("click", del);
+		}
+		var z = 1;
+		var k = 0;
+		function add(){
+			var time = new Date();
+			var newNode = document.createElement("img"); //<imgs >
+			var pic = parseInt(document.getElementById("pic").value);
+			if (pic < 10){
+				pic = "0" + pic.toString(); 
+			}else{
+				pic = pic.toString();
+			}
+			var x = document.getElementById("x").value;
+			var y = document.getElementById("y").value;
+			newNode.setAttribute("src", pic + ".png"); //
+			newNode.setAttribute("class", "picture allowdel");
+			/*drag*/
+			newNode.setAttribute("id","drag_obj" + k);
+			k++;
+			newNode.setAttribute("draggable", "true");
+			newNode.setAttribute("ondragstart", "drag(event)");
+			/**/
+			newNode.style = "top:" + x + "px;" + "left:" + y + "px;" + "z-index:" + z.toString() + ";";
+			document.body.appendChild(newNode);
+			var store = {
+				"src": pic + ".png",
+				"class": "picture allowdel",
+				"style": "top:" + x + "px;" + "left:" + y + "px;" + "z-index:" + z.toString() + ";",
+			}
+			localStorage.setItem(time.getTime(), JSON.stringify(store));
+		}
+
+		function loading(){
+			var keys = [];
+			for (var i=0; i< localStorage.length; i++){
+				keys.push(localStorage.key(i));
+			}
+
+			for (var key in keys){
+				var obj = JSON.parse(localStorage.getItem(keys[key]));
+				var newNode = document.createElement("img");
+				newNode.setAttribute("src", obj.src); //newNode.src = obj.src;
+				newNode.setAttribute("class", "picture allowdel");
+				newNode.style = obj.style;
+				document.body.appendChild(newNode);
+			}
+		}
+		
+		function del(){
+			var del_arr = document.querySelectorAll(".allowdel");
+			for (var i = 0; i<localStorage.length; i++){
+				var target_obj = del_arr[i]; //若沒有把document.querySelectorAll(".allowdel")改成del_arr(固定arr)，會因為刪除，動態的變更陣列內容。而i繼續跑，會出bug。
+				target_obj.parentElement.removeChild(target_obj);
+			}
+			localStorage.clear();
+		}
+		/**/
+		function drag(ev){
+			ev.dataTransfer.setData("text", ev.target.id);
+		}
+
+		function allowdrop(ev){
+			ev.preventDefault();
+		}
+		function drop(ev){
+			ev.preventDefault();
+			var data = ev.dataTransfer.getData("text");
+			ev.target.appendChild(document.getElementById(data));
+		}
+		/**/
+		window.addEventListener("load", start, false);
+	</script>
+</head>
+
+<body>
+	<img src="blackboard.jpg" height="600" width="800" style="float:left; z-index:0;" ondragover="allowdrop(event)" ondrag="drop(event)"/>
+	<img id="img-0" class="picture" style="top: 50px; left: 50px; z-index:1;" src="00.png" draggable="true" />
+	<div id="nav" class="nav">
+		<form action="#">
+			<p>
+				<label>要放哪個道具圖片(請輸入編號):
+					<input type="number" id="pic" min="1" max="10" step="1" value="1" />
+				</label><br />
+				<label>圖片X座標:
+					<input type="number" id="x" min="40" max="600" step="1" value="40" />
+				</label><br />
+				<label>圖片Y座標:
+					<input type="number" id="y" min="40" max="400" step="1" value="100" />
+				</label>
+			</p>
+			<p>
+				<input type="button" value="新增圖片" id="addButton">
+				<input type="button" value="移除所有圖片" id="removeAllButton">
+			</p>
+		</form>
+		<ul>
+			<li>[01]任意門</li>
+			<li>[02]時光機</li>
+			<li>[03]竹蜻蜓</li>
+			<li>[04]時光布</li>
+			<li>[05]記憶麵包</li>
+			<li>[06]縮小燈</li>
+			<li>[07]翻譯蒟蒻</li>
+			<li>[08]如果電話亭</li>
+			<li>[09]穿透環</li>
+			<li>[10]更衣照相機</li>
+		</ul>
+	</div>
+</body>
+
+</html>

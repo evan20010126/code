@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Doraemon</title>
+    <style type="text/css">
+        @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+
+        img {
+            width: 300px;
+            height: 300px;
+        }
+
+		div, input {
+            font-family: Noto Sans TC, Perpetua, serif;
+			width: 300px;            
+        }
+		
+		div {
+            color: darkblue;
+            text-align: center;	
+			font-size: 24px;			
+        }
+
+		input {
+			font-size: 18px;
+			font-weight: bold;
+		}
+    </style>
+    <script>
+        function start(){
+            //var button = document.getElementById("play");
+            //button.addEventListener("click",show,false);
+            //var SOUND = document.getElementById("my_voice"); //標籤
+            setInterval("show_new_img()",600);
+        }
+        function show(){
+            //document.getElementById("accessory").src = "blank.png";
+            document.getElementById("messages").innerHTML = "";
+            //var voice = document.getElementById("my_voice");
+            //voice.play();
+            //setTimeout( show_new_img, 1900);
+            
+        }
+        function show_new_img(){
+            var number = Math.floor(Math.random() * 9) + 1;
+            if (number < 10){
+                document.getElementById("accessory").src = "0" + number +".png"; 
+            }else{
+                document.getElementById("accessory").src = number + ".png";
+            }
+            document.getElementById("messages").innerHTML = item_list[number-1];
+        }
+        var str = "任意門 時光機 竹蜻蜓 時光布 記憶麵包 縮小燈 翻譯蒟蒻 如果電話亭 穿透環 更衣照相機";
+        var item_list = str.split(" ");
+
+        window.addEventListener("load", start, false);
+    </script>
+</head>
+
+<body>
+    <audio id = "my_voice" controls>
+        <source src = "doraemon-bg.mp3">
+    </audio>
+    <br>
+    <img id="accessory" src="00.png" alt="accessory">
+    <form action="#">
+        <!--<input id="play" type="button" value="抽道具">-->
+    </form>
+    <div id="messages">
+        多拉A夢
+    </div>
+</body>
+
+</html>

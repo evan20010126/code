@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <meta charset="utf-8">
+    <style>
+        @import url("https://fonts.googleapis.com/earlyaccess/cwtexkai.css");
+        div{
+            font-family: 'cwTeXKai', Perpetua, serif;
+            text-align:center;
+        }
+        .A {
+            color: dimgray;
+        }
+        .B{
+            color: navy;
+        }
+        span{
+            color: firebrick;
+            font-size: 150%;
+        }
+    </style>
+    <script type="text/javascript">
+        var array1 = ["客戶那邊的", "我們的", "負責談需求的", "負責這個部分的", "直到上線前一天", "(雙手一攤)"];
+        var array2 = ["專案經理", "主管", "工程師", "設計師", "外包", "User", "聯絡窗口"];
+        var array3 = ["當初沒有講清楚", "一直換", "說他肚子不舒服", "擺爛不想做了", "突然開始放長假", "去生小孩了", "離職了", "都沒甚麼 sense", "都沒有跟我講", "以為這些不用做", "一直在狀況外", "做事拖拖拉拉", "還搞不清楚狀況", "Quality 有問題", "東西一直改", "在整我", "突然就沒來了"]
+        var array4 = ["Cat.jpg", "Harry.jpg", "Jacky.jpg", "Yao.jpg"];
+        
+
+        function start(){
+            setcontent();
+            
+        }
+        
+        function restore(){
+            location.reload();
+        }   
+        function setcontent(){
+            var subcontent1_num = Math.floor(Math.random() * (array1.length -1));
+            var subcontent2_num = Math.floor(Math.random() * (array2.length -1));
+            var subcontent3_num = Math.floor(Math.random() * (array3.length -1));
+            var subcontent4_num = Math.floor(Math.random() * (array4.length -1));
+            var content_to_dom1 = '';
+            content_to_dom1 +=  array1[subcontent1_num];
+            content_to_dom1 += array2[subcontent2_num];
+            content_to_dom1 += '<span>'+array3[subcontent3_num] + '</span>'; 
+            var content_to_dom2 = '';
+            content_to_dom2 += '<img src="' + array4[subcontent4_num] + '"onclick="restore()">';
+            var dom1 = document.getElementById("dom1");
+            var dom2 = document.getElementById("dom2");
+            dom1.innerHTML = content_to_dom1;
+            dom2.innerHTML = content_to_dom2;
+            
+        }
+        window.addEventListener( "load", start ,false);
+
+    </script>
+</head>
+<body>
+    <div>
+        <h1 class="A">專案失敗了，是因為...</h1>
+        <h1 id="dom1" class="B"></h1>
+        <div id="dom2"></div>
+    </div>
+    
+</body>
+</html>

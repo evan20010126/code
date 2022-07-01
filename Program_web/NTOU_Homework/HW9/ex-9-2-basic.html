@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Tic-tac-toe</title>
+    <style type="text/CSS">
+        table, th, td{
+				border: 1px solid black;
+				border-collapse: collapse;
+				font-family: Helvetica;
+				font-size: 48px;
+        }
+        caption {
+            color: navy;
+        }
+        tbody tr {
+            height: 100px;
+        }
+        td {
+            width: 100px;
+            text-align: center;
+        }
+    </style>
+    <script>
+
+    </script>
+</head>
+
+<body>
+    <table id="table">
+        <caption>Tic-Tac-Toe</caption>
+        <tbody>
+            <tr>
+                <td>O</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>X</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3">
+                    <input id="replay" type="button" value="Replay" disabled onclick="replay()">
+                    <input id="new" type="button" value="New Game" onclick="location.reload()">
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+
+</body>
+
+</html>

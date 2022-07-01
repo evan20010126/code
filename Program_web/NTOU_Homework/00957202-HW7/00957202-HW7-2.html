@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<!--submit事件要搭在form上
+    input number url不會判斷空 要額外判斷-->
+<head>
+    <meta charset="utf-8">
+    <title>Local Storage</title>
+    <style type="text/CSS">
+        table {
+            width: 90%;
+            border-collapse: collapse;
+            background-color: lightblue;
+            font-family: Perpetua;
+        }
+
+        table, td, th {
+            border: 1px solid black;
+            padding: 4px;
+        }
+
+        th {
+            text-align: center;
+            color: white;
+            background-color: darkblue;
+        }
+
+        tr:nth-child(odd) {
+            background-color: white;
+        }
+
+        td {
+            text-align: center;
+        }
+    </style>
+    <script type="text/javascript">
+        function start(){
+            loading();
+            document.getElementById("submitform").addEventListener("submit", add);
+            document.getElementById("removeAllButton").addEventListener("click", clearAll);
+
+        }
+        function add(){
+            var Book_Title = document.getElementById("Title");
+            var Author = document.getElementById("Author");
+            var Year = document.getElementById("Year");
+            var Url = document.getElementById("URL");
+            if (Year.value == ""){
+                alert("日期不可為空");
+            }else if(Url.value == ""){
+                alert("網址不可為空");
+            }else{
+                var item = {
+                    title : Book_Title.value,
+                    author : Author.value,
+                    year : Year.value,
+                    url : Url.value
+                };
+                var date = new Date();
+                localStorage.setItem("ntou-" + date.getTime() , JSON.stringify(item));
+                var tbody = document.getElementById("insertPlace");
+                var tr_str = '<tr><td>' + item.title + '</td><td>' + item.author +'</td><td>' + item.year + '</td><td><a href="'+ item.url + '" target = "_blank">' + item.url + '</a></td></tr>';
+                tbody.innerHTML = tbody.innerHTML + tr_str;
+            }
+        }
+        
+        function clearAll(){
+            localStorage.clear();
+            alert("All items were removed!");
+            var tbody = document.getElementById("insertPlace");
+            tbody.innerHTML = "";
+            loading();
+        }
+
+        function loading(){
+            var tbody = document.getElementById("insertPlace"); //先清空
+            tbody.innerHTML = "";
+            var keys = [];
+            for (var i = 0 ; i<localStorage.length; i++){ //先把所有key存成陣列
+                if(localStorage.key(i).startsWith("ntou-")){
+                    keys.push(localStorage.key(i));
+                }
+            }
+            keys.sort();
+            for (var key in keys){
+                var obj = JSON.parse(localStorage.getItem(keys[key]));
+                var tr_str = '<tr><td>' + obj.title + '</td><td>' + obj.author +'</td><td>' + obj.year + '</td><td><a href="'+ obj.url + '" target = "_blank">' + obj.url + '</a></td></tr>';
+                tbody.innerHTML = tbody.innerHTML + tr_str;
+            }
+        }
+
+
+        
+
+        window.addEventListener("load", start);
+    </script>
+</head>
+
+<body>
+    <form action="#" id = "submitform"> <!--submit事件要掛在form上-->
+        <p>
+            <label>Book Title:<input type = "text" id="Title"></label>
+            <label>Author(s):<input type = "text" id="Author"></label>
+            <label>Year:<input type = "number" id="Year"></label>
+            <label>Book URL:<input type = "url" id="URL"></label>
+        </p>
+        <p>
+            <input type="submit" value="Add New Item" id="addButton">
+            <input type="button" value="Remove All Items" id="removeAllButton">
+        </p>
+    </form>
+    <hr>
+    <div id="display">
+        <table>
+            <thead>
+                <tr>
+                <th>Title</th>
+                <th>Author(s)</th>
+                <th>Year</th>
+                <th>URL</th>
+                </tr>
+            </thead>
+            <tbody id = "insertPlace">
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

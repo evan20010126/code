@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<!-- Fig. 9.5: RollDice.html -->
+<!-- Random dice image generation using Math.random. -->
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Random Dice Images</title> 
+      <style type = "text/css">
+         li { display: inline; margin-right: 10px; }
+         ul { margin: 0; }
+         body { color:navy; font-size: 120%; font-family: Helvetica, "MicrosoftYaHei", "LiHei Pro", "TW-Kai";}
+      </style>
+      <script>
+         // variables used to interact with the img elements
+         var die1Image;
+         var die2Image;
+         var die3Image;
+         var die4Image;
+
+         // register button listener and get the img elements
+         function start()
+         {
+            var button = document.getElementById( "rollButton" );
+            var button2 = document.getElementById( "rollButton2" );
+            button.addEventListener( "click", rollDice, false );
+            button2.addEventListener( "click", rollDice2, false);
+            die1Image = document.getElementById( "die1" ); //why die1Image 能轉給樓下function
+            die2Image = document.getElementById( "die2" );
+            die3Image = document.getElementById( "die3" );
+            die4Image = document.getElementById( "die4" );
+         } // end function start
+
+         var count = [0,0,0,0,0,0,0]; //數每個出現幾次 //第一格一樣不存值 index表
+         // roll the dice
+         function rollDice()
+         {
+            setImage( die1Image ); // var不是function內 scrpoe
+            setImage( die2Image );
+            setImage( die3Image );
+            setImage( die4Image );
+            find_what();
+            count = [0,0,0,0,0,0,0];
+         } // end function rollDice
+         
+         function rollDice2(){
+            setImage_same( die1Image, die2Image, die3Image, die4Image );
+            find_what();
+            count = [0,0,0,0,0,0,0];
+         }
+
+         // set src and alt attributes for a die
+         function setImage( dieImg )
+         {
+            var dieValue = Math.floor( 1 + Math.random() * 6 );
+            dieImg.setAttribute( "src", "die" + dieValue + ".png" );
+            dieImg.setAttribute( "alt", 
+               "die image with " + dieValue + " spot(s)" ); // dieValue 可能是1~6
+            count[dieValue]++;
+         } // end function setImage
+
+         function setImage_same( dieImg1,dieImg2,dieImg3,dieImg4){
+            var dieValue = Math.floor( 1 + Math.random() * 6 );
+            dieImg1.setAttribute("src", "die" + dieValue + ".png");
+            dieImg1.setAttribute( "alt", 
+               "die image with " + dieValue + " spot(s)" ); // dieValue 可能是1~6
+            count[dieValue]++;
+            dieImg2.setAttribute("src", "die" + dieValue + ".png");
+            dieImg2.setAttribute( "alt", 
+               "die image with " + dieValue + " spot(s)" );
+            count[dieValue]++;
+            dieImg3.setAttribute("src", "die" + dieValue + ".png");
+            dieImg3.setAttribute( "alt", 
+               "die image with " + dieValue + " spot(s)" );
+            count[dieValue]++;
+            dieImg4.setAttribute("src", "die" + dieValue + ".png");
+            dieImg4.setAttribute( "alt", 
+               "die image with " + dieValue + " spot(s)" );
+            count[dieValue]++;
+         }
+         function find_what(){
+            //拿count 來做事
+            var max_count = 0;
+            for (var i=1 ; i<=6; i++){
+               if (count[i] > max_count){
+                  max_count  = count[i];
+               }
+            }
+            var result = document.getElementById("result");;
+            if (max_count == 1){
+               result.innerHTML = 'Oops! Your roll is "無面"!' + '<br>' + '<img src="oops.jpg">';
+            }else if (max_count ==4){
+               result.innerHTML = 'Congratulations! Your roll is "一色"！' + '<br>' + '<img src="congrats.jpg">';
+            }else{
+               result.innerHTML = 'No decision, please re-roll the dice!';
+            }
+         }
+         window.addEventListener( "load", start, false );
+      </script>
+   </head>
+   <body>
+      <form action = "#">
+         <input id = "rollButton" type = "button" value = "Roll Dice">
+         <input id = "rollButton2" type = "button" value = "Shortcut">
+      </form>
+      <ol>
+         <li><img id = "die1" src = "blank.png" alt = "blank image"></li>
+         <li><img id = "die2" src = "blank.png" alt = "blank image"></li>
+         <li><img id = "die3" src = "blank.png" alt = "blank image"></li>
+         <li><img id = "die4" src = "blank.png" alt = "blank image"></li>
+      </ol>
+      <div id = "result"></div>
+   </body>
+</html>
+
+<!--
+**************************************************************************
+* (C) Copyright 1992-2012 by Deitel & Associates, Inc. and               *
+* Pearson Education, Inc. All Rights Reserved.                           *
+*                                                                        *
+* DISCLAIMER: The authors and publisher of this book have used their     *
+* best efforts in preparing the book. These efforts include the          *
+* development, research, and testing of the theories and programs        *
+* to determine their effectiveness. The authors and publisher make       *
+* no warranty of any kind, expressed or implied, with regard to these    *
+* programs or to the documentation contained in these books. The authors *
+* and publisher shall not be liable in any event for incidental or       *
+* consequential damages in connection with, or arising out of, the       *
+* furnishing, performance, or use of these programs.                     *
+**************************************************************************
+-->

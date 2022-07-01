@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>00957202-HW4-2</title>
+    <style type="text/CSS">
+        @import url(https://fonts.googleapis.com/earlyaccess/cwtexyen.css);
+
+        h1 {
+            font-size: 50px;
+            font-family: cwTeXYen;
+        }
+		div {
+			font-size: 80px;
+			font-family: Consolas;
+			margin: 5px;
+            float: left;
+			/*  必須能使div並排呈現 */
+		}
+		div.number {
+			/* 必須要能加框，顏色為dodgerblue */
+            border: solid;
+            color: dodgerblue;
+            border-color: black;
+		}
+	</style>
+
+</head>
+
+<body>
+    <h1>四則運算結果:</h1>
+    <div class="number" id="num1">N1</div>
+    <div id="op">?</div>
+    <div class="number" id="num2">N2</div>
+    <div>=</div>
+    <div class="number" id="result">Result</div>
+    <script type="text/javascript">
+        var input1 = prompt('請輸入算數運算元：1 代表加(+)、2 代表減(-)、3 代表乘(*)、4 代表除(/):');
+        var oper = "";
+        switch(input1)
+        {
+            case "1":
+                oper = "+";
+                break;
+            case "2":
+                oper = "-";
+                break;
+            case "3":
+                oper = "*";
+                break;
+            case "4":
+                oper = "/";
+                break;
+            default:
+                window.alert("輸入有誤！選項自動設為 1。");
+                input1 = "1";
+                oper = "+";
+        }
+        /////
+        var input2_1 = prompt('請輸入第一個數字:');
+        var num1 = 0;
+        if (isFinite(input2_1)){
+            num1 = parseInt(input2_1);
+        }else{
+            window.alert("輸入有誤！數值自動設定為0");
+            num1 = 0;
+        }
+        /////
+        var input2_2 = prompt('請輸入第二個數字:');
+        var num2 = 0;
+        if (isFinite(input2_2)){
+            num2 = parseInt(input2_2);
+        }else{
+            window.alert("輸入有誤！數值自動設定為0");
+            num2 = 0;
+        }
+        var dom1 = document.getElementById("num1");
+        dom1.innerHTML = num1;
+        var dom2 = document.getElementById("num2");
+        dom2.innerHTML = num2;
+        var dom3 = document.getElementById("op");
+        dom3.innerHTML = oper;
+        var dom4 = document.getElementById("result");
+        var ANS = 0;
+        switch(input1)
+        {
+            case "1":
+                ANS = num1 + num2;
+                break;
+            case "2":
+                ANS = num1 - num2;
+                break;
+            case "3":
+                ANS = num1 * num2;
+                break;
+            case "4":
+                ANS = num1 / num2;
+                break;
+        }
+        dom4.innerHTML = ANS;
+    </script>
+</body>
+
+</html>

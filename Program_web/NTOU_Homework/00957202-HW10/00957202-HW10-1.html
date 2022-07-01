@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>15-Puzzle</title>
+    <meta charset="utf-8" />
+    <style type="text/css">
+        table {
+            border-collapse: collapse;
+        }
+
+        caption, td {
+            font-weight: bold;
+            font-family: helvetica, arial, sans-serif;
+        }
+
+        caption {
+            font-size: 3em;
+            color: gray;
+        }
+
+        td {
+            font-size: 4em;
+            color: blue;
+            border: 2px solid gray;
+            padding: 5px;
+        }
+
+        div {
+            font-size: 2em;
+            color: red;
+        }
+
+        button {
+            width: 80px;
+            height: 50px;
+        }
+    </style>
+    <script type="text/javascript" >
+        var key1 = 0;
+        var key2 = 0;
+        function setup(){
+            
+        }
+
+        function checkWin(){
+            tds = document.getElementsByTagName("td");
+        }
+        function doClick(event,x,y){
+            if(x == key1 && y == key2){
+                //event.target.innerHTML = ;
+            }else if((x == key1+1 && y == key2)){
+                //event.target.innerHTML = key1;
+                document.getElementById("cell"+ key1.toString() +key2.toString()).innerHTML = event.target.innerHTML;
+                event.target.innerHTML = " ";
+                key1 = x;
+            }else if((x == key1-1 && y == key2)){
+                document.getElementById("cell"+ key1.toString() +key2.toString()).innerHTML = event.target.innerHTML;
+                event.target.innerHTML = " ";
+                key1 = x;
+            }else if((x == key1 && y == key2+1)){
+                document.getElementById("cell"+ key1.toString() +key2.toString()).innerHTML = event.target.innerHTML;
+                event.target.innerHTML = " ";
+                key2 = y;
+            }else if((x == key1 &&  y == key2-1)){
+                document.getElementById("cell"+ key1.toString() +key2.toString()).innerHTML = event.target.innerHTML;
+                event.target.innerHTML = " ";
+                key2 = y;
+            }else{
+            }
+        }
+        function show(x,y){
+            var message = document.getElementById('msg');
+            if(x == key1 && y == key2){
+                message.innerHTML = "This is a blank cell!";
+            }else if((x == key1+1 && y == key2)){
+                message.innerHTML = "This tile can move up!";
+            }else if((x == key1-1 && y == key2)){
+                message.innerHTML = "This tile can move down!";
+            }else if((x == key1 && y == key2+1)){
+                message.innerHTML = "This tile can move left!";
+            }else if((x == key1 &&  y == key2-1)){
+                message.innerHTML = "This tile can move right!";
+            }else{
+                message.innerHTML = "Illegal move!";
+            }
+        }
+    </script>
+</head>
+
+<body onload="setup()">
+    <table id="board">
+        <caption>15-Puzzle</caption>
+        <tbody>
+            <tr>
+                <td onclick="doClick(event, 0, 0 )" onmouseover="show(0,0)" id="cell00"> </td>
+                <td onclick="doClick(event, 0, 1 )" onmouseover="show(0,1)" id="cell01">15</td>
+                <td onclick="doClick(event, 0, 2 )" onmouseover="show(0,2)" id="cell02">14</td>
+                <td onclick="doClick(event, 0, 3 )" onmouseover="show(0,3)" id="cell03">13</td>
+            </tr>
+            <tr>
+                <td onclick="doClick(event, 1, 0 )" onmouseover="show(1,0)" id="cell10">12</td>
+                <td onclick="doClick(event, 1, 1 )" onmouseover="show(1,1)" id="cell11">11</td>
+                <td onclick="doClick(event, 1, 2 )" onmouseover="show(1,2)" id="cell12">10</td>
+                <td onclick="doClick(event, 1, 3 )" onmouseover="show(1,3)" id="cell13">09</td>
+            </tr>
+            <tr>
+                <td onclick="doClick(event, 2, 0 )" onmouseover="show(2,0)" id="cell20">08</td>
+                <td onclick="doClick(event, 2, 1 )" onmouseover="show(2,1)" id="cell21">07</td>
+                <td onclick="doClick(event, 2, 2 )" onmouseover="show(2,2)" id="cell22">06</td>
+                <td onclick="doClick(event, 2, 3 )" onmouseover="show(2,3)" id="cell23">05</td>
+            </tr>
+            <tr>
+                <td onclick="doClick(event, 3, 0 )" onmouseover="show(3,0)" id="cell30">04</td>
+                <td onclick="doClick(event, 3, 1 )" onmouseover="show(3,1)" id="cell31">03</td>
+                <td onclick="doClick(event, 3, 2 )" onmouseover="show(3,2)" id="cell32">02</td>
+                <td onclick="doClick(event, 3, 3 )" onmouseover="show(3,3)" id="cell33">01</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>
+        <button onclick="restart()" id="restartBtn">Restart Game</button>
+        <button onclick="gotoLastStep()" id="laststepBtn">Go to the Last Step</button>
+        <button onclick="importData()" id="importBtn">Import Data</button>
+        <button onclick="switchBGM()" id="bgmBtn">Switch BGM</button>
+    </p>
+    <div id="msg"></div>
+</body>
+
+</html>

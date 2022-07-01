@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>00957202-HW3-2</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		* {font-family: helvetica;}
+		.nameclass{
+			color: Firebrick;
+			font-weight: bold;
+		}
+		.dadclass{
+			text-decoration: underline;
+			color: Navy;
+		}
+	</style>
+	<script type="text/javascript">
+		var name = prompt("Please input your name:");
+		var birthYear = prompt("Please input your birth year:");
+		var dada = 2020 - parseInt(birthYear);
+		var str1 = 'Hello, <span class = "nameclass">' + name + "</span> !"+ "<br>" + 'You are <span class = "dadclass">' + dada + "</span> years old!";
+		var str2 = 'Hello, <span class = "nameclass">' + name + "</span> !"+ "<br>" + 'You are <span class = "dadclass">' + "one" + "</span> years old!";
+		var str3 = 'Hello, <span class = "nameclass">' + name + "</span> !"+ "<br>" + "Your age is a mystery!";
+		if (dada == 1){
+			document.writeln(str2);
+			console.log("Hello, "+ name + " !\n" + "You are " + "one" + " year old!");
+		}else if(dada > 1 && parseInt(birthYear)<=2020){
+			document.writeln(str1);
+			console.log("Hello, "+ name + " !\n" + "You are " + dada + " years old!");
+		}else{
+			alert("Your input is incorrect!");
+			console.log("Hello," +  name +"!\nYour input is incorrect!");
+			document.writeln(str3)
+		}
+	</script>
+</head>
+<body>
+
+</body>
+</html>

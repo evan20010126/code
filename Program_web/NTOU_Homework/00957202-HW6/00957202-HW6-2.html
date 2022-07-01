@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <meta charset="utf-8">
+    <style>
+        div{
+            /*font-family: Perpetua;*/
+            font-size: 16px;
+            height: 400px;
+            width: 40%;
+            overflow: scroll;
+            font-weight: bolder;
+            background-color: rgb(168, 168, 41);
+        }
+    </style>
+    <script type="text/javascript">
+        var article = ["the", "a", "one", "some", "any"];
+        var noun = [ "boy", "girl", "dog", "cat","car"];
+        var verb = ["drove", "jumped", "ran", "walked", "skipped"];
+        var preposition =  ["to", "from", "over", "under", "on"];
+
+        function generate_sentence(){
+            var sentence_array = [];
+            //
+            var article_num = Math.floor(Math.random() * (article.length -1));
+            var article_large_string = article[article_num].substring(0,1).toUpperCase() + article[article_num].substring(1,article[article_num].length);//拆出來第一個字變大寫後的
+            sentence_array.push(article_large_string);
+            var noun_num = Math.floor(Math.random() * (noun.length -1));
+            sentence_array.push(noun[noun_num]);
+            var verb_num = Math.floor(Math.random() * (verb.length -1));
+            sentence_array.push(verb[verb_num]);
+            var preposition_num = Math.floor(Math.random() * (preposition.length -1));
+            sentence_array.push(preposition[preposition_num]);
+            //
+            var sentence = sentence_array.join(" ") + ".";
+            console.log(sentence);
+            return sentence;
+        }
+        function generate_sentences(){
+
+            var sentences_number = parseInt(document.getElementById("message").value) -2;
+            var content = "";
+            content += "Once upon a time...";
+            content += '<br><br>';
+            for (var i=0; i<sentences_number; i++){
+                content += generate_sentence();
+                content += '<br><br>';
+            }
+            content += "THE END";
+            var dom = document.getElementById("dom");
+            dom.innerHTML = content;
+        }
+    </script>
+</head>
+<body>
+    <div id="dom">
+
+    </div>
+    <form>
+        #of sentences <input type="number" id="message" min="1" max="30" value="10">
+        <br>
+        <input type="button" id="button1" onclick="generate_sentences()" value="Generate Short Story">
+    </form>
+</body>
+</html>

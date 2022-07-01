@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap網頁</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">    
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+	  <div class="panel panel-default">
+        <div class="panel-heading">
+	      <h3>夢幻水晶香檳杯浪漫登場！</h3>
+	    </div>
+		
+        <div class="panel-body">
+		  <p>喜歡夢幻水晶系列杯具的朋友有福了，一年一度的新品香檳杯上市了，趕快入手滿滿的幸福感吧！</p>
+	      <!-- 觸發互動視窗的按鈕 -->
+          <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">開始訂購</button>
+	    </div>
+      </div>	
+      
+      <!-- 互動視窗 -->
+      <div class="modal fade" id="myModal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+              <h3 class="modal-title">夢幻水晶香檳杯</h3>
+            </div>
+			
+            <div class="modal-body">
+              <img src="images\cup.jpg" width="50%" class="img-responsive center-block">
+			  <p class="h3 text-right">$30.0</p>
+            </div>
+			
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary btn-lg">放入購物車</button>
+            </div>
+          </div>
+        </div>
+      </div>
+	</div>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Scope-Test</title>
+	<script type="text/javascript">
+
+		var scope = "global";
+		var num = "xyz";
+
+		function checkScope() {
+			var scope = "local";
+			document.writeln(window.scope + "<br />");
+			document.writeln(scope + "<br />");
+		}
+
+		function scopeTest() {
+			var num = 5;
+			document.writeln("Finite? " + isFinite(num) + "<br />");
+			document.writeln("NaN? " + isNaN(num) + "<br />");
+			document.writeln("Finite? " + isFinite(num / 0) + "<br />");
+			document.writeln("NaN? " + isNaN("abc" + num) + "<br />");
+		}
+
+		checkScope();
+		scopeTest();
+	</script>
+</head>
+
+<body>
+</body>
+
+</html>

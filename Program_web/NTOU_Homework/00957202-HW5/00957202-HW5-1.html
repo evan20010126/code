@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <meta charset="utf-8">
+    <style>
+        form {
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    Side Length (<=10):
+	<form>
+        <input type="text" id="input" value="5">
+        <input type="button" id="triangle" value="Draw Baseball Triangle">
+        <input type="button" id="Square" value="Draw Baseball Square">
+    </form>
+    <br>
+    <div id="balls"></div>
+
+    <script type="text/javascript">
+        function input_number_squ(){
+            input_dom = document.getElementById("input");
+            input_num = input_dom.value;
+            //window.alert(input_num);
+            if(input_num<0 || input_num>10){
+                window.alert("You input an invalid value!!");
+                input_dom.value = 5;
+                input_num = 5;
+            }
+            generate_squ();
+        }
+
+        function input_number_tri(){
+            input_dom = document.getElementById("input");
+            input_num = input_dom.value;
+            //window.alert(input_num);
+            if(input_num<0 || input_num>10){
+                window.alert("You input an invalid value!!");
+                input_dom.value = 5;
+                input_num = 5;
+            }
+            generate_tri();
+        }
+        
+        function generate_tri(){
+            input_dom = document.getElementById("input");
+            input_num = input_dom.value;
+            html_str = "";
+            for(var i=1; i<=input_num; i++){ //第幾行
+                for(var j=1 ; j<=input_num-i; j++){
+                    html_str += '<img src="blank.png" width="50px" height="50px">';
+                }
+                for(var k=1; k<=i ;k++){
+                    html_str += '<img src="baseball.jpg" width="50px" height="50px">';
+                }
+                html_str += '<br>';
+            }
+            var balls_dom = document.getElementById("balls");
+            balls_dom.innerHTML = html_str;
+        }
+        function generate_squ(){
+            input_dom = document.getElementById("input");
+            input_num = input_dom.value;
+            html_str = "";
+            for(var i=0; i<=input_num-1; i++){
+                for(var j=0; j<=input_num-1; j++){
+                    html_str += '<img src="baseball.jpg" width="50px" height="50px">';
+                }
+                html_str += '<br>'
+            }
+            var balls_dom = document.getElementById("balls");
+            balls_dom.innerHTML = html_str;
+        }
+        document.getElementById("triangle").onclick = input_number_tri;
+        document.getElementById("Square").onclick = input_number_squ;
+    </script>
+</body>
+</html>
