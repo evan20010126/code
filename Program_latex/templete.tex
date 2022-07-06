@@ -181,94 +181,204 @@
 
     \chapter{緒論}
 
-    \section{關鍵詞}
-    \par
-    手語、機器學習、深度學習、Openpose、Transformer、CNN、LSTM、Grad-cam
+    % \section{關鍵詞}
+    % \par
+    % 手語、機器學習、深度學習、Mediapipe、Transformer、CNN、LSTM、Grad-cam
 
     \section{研究背景與目標}
     \par
-    手語是聾啞人士很重要的溝通方式，生活中難免碰到一些聾啞人士，想要與他們交流需先學習手語，但網路上現有的資源幾乎都是用影片學習的方式，沒有可以自我檢視的系統，因此本專題設計一套主要提供手語教學、測驗、偵錯的功能的系統，提供給想要入門手語的初學者一個學習的平台。
+    手語是聾啞人士很重要的溝通方式，生活中難免碰到一些聾啞人士，想要與他們交流需先學習手語，但網路上現有的資源幾乎都是用影片學習的方式，沒有可以自我檢視的系統，因此本專題設計一套主要提供手語教學、測驗及偵錯的功能的系統，提供給想要入門手語的初學者一個學習的平台。
 
     \section{現有相關研究概況}
     \par
-    對於手語辨認技術，早期採用Dynamic time warping(DTW)的方式來辨識手語，其方法是比對兩個時間序列的最小距離與利用K-Nearest Neighbors演算法判斷辨識結果，缺點是時間複雜度為兩個時間序列的長度的乘積──O(mn)，當時間序列長度越長所需時間越長，而在現今的手語辨認技術上，已經可以利用深度學習辨識出動態的手語片段，但無偵測錯誤的功能。
+    對於手語辨認技術，有的採用Dynamic time warping(DTW)的方式來辨識手語，其方法是比對兩個時間序列的差異並利用K-Nearest Neighbors演算法判斷辨識結果，時間複雜度為兩個時間序列的長度的乘積──O(mn)，當時間序列長度越長所需時間越長，而在現今的手語辨認技術上，已經可以利用深度學習辨識出動態的手語片段，但無偵測錯誤的功能。
     % Dynamic time wrapping
     % 缺點1: 缺點是容易因相同的手語片段序列長度不同，，進而產生誤差，
     \par
 
+    \section{系統概述與流程圖}
+    \par
+    本系統主要提供手語教學、測驗及偵錯功能，其中測驗及偵錯為本專題的核心功能，可細分為三個階段：（一）辨識與擷取支幹特徵、（二）由神經網路進行分類及（三）利用神經網路其中一層的梯度資訊找出決策的依據進行偵錯。
+
+    \par
+    系統的第一階段，選擇使用Mediapipe擷取支幹特徵，做適當的影片裁減、支幹點座標的正規化。
+
+    \par
+    系統的第二階段，嘗試設計CNN、LSTM與Transformer三種不同的神經網路架構，經過實驗，最終採用最符合本系統的──CNN架構。
+
+    \par
+    系統的第三階段，選擇使用Grad-cam技術，擷取神經網路其中一層的梯度資訊，找出各項類別的關鍵偵數，推斷出該時間序列的錯誤偵數。
+
+    \par
+    其中，本系統的流程圖如下：\\
+    \includegraphics[width=3in]{demo.jpg}
+    % Grad-CAM：「對於特定感興趣的決策值，Grad-CAM用回傳到CNN模型中最後一層卷積層的梯度資訊，來決定每個神經元的重要程度。」
+    % \begin{enumerate}
+    %     \item MediaPipe
+    %     \item 神經網路
+    %     \item Grad-Cam
+    % \end{enumerate}
 
     \section{章節概述}
     \par
 
-    \chapter{架構與方法設計}
-    \section{系統概述與流程圖}
+    \chapter{技術介紹與方法設計}
+    \section{技術介紹}
     \par
-    \includegraphics[width=3in]{demo.jpg}\\
     本系統將架構分為三部分:
     \begin{enumerate}
-        \item Openpose
-        \item 神經網路
+        \item MediaPipe:
+              \par
+              是一款由 Google 開發並開源的數據流處理機器學習應用開發框架。它是一個基於圖的數據處理管線，用於構建使用了多種形式的數據源，如影片、音頻、傳感器數據以及任何時間序列數據。
+              \par
+              MediaPipe提供人體支幹和手部的關鍵點，又因為MediaPipe的輕量、以及性能良好等優點，為本專題選擇的工具之一。\\
+              下圖為MediaPipe對於一影片做hand solution graph的流程圖\\
+              \includegraphics[width=5in]{mediapipe.png}
+              % Gradient-weighted Class Activation Mapping
+        \item 神經網路:
+              \begin{itemize}
+                  \item Transforer:
+                        \par
+
+                  \item Convolution:
+                        \par
+
+                  \item LSTM:
+                        \par
+
+              \end{itemize}
         \item Grad-Cam
+              \par
+              模型最後一層捲積層生成的每張特徵圖在經過GlobalAveragePooling後變成一個像素包含了整個特徵圖的訊息，CAM的技術是利用反向思考，因為經過GAP後的像素陣列會乘以權重w，權重w值越大代表該像素的影響越大，
+              \par
+              改良了CAM最後一層必須是GlobalAveragePooling的限制。
+              \par
+              Grad-CAM 的思想即是「不論模型在卷積層後使用的是何種神經網路，不用修改模型就可以實現CAM」，最後不論是全連接層、RNN、LSTM 或是更複雜的網路模型，都可以藉由 Grad-CAM 取得神經網路的分類關注區域熱力圖(Heatmap)。
+              \par
+              Grad-CAM關鍵是能夠透過Back Propagation計算在CAM中使用的權重\\
     \end{enumerate}
 
-    \section{資料前處理}
-    \section{特徵擷取}
+    % \section{資料前處理}
+    % \section{特徵擷取}
     \section{方法設計}
     \par
     本專題利用三種神經網路架構(Transformer、CNN、LSTM)實踐辨識手語，並分別應用Grad-Cam演算法於時間序列資料達到錯誤偵測的功能。探討這三種不同的神經網路模型對於二維時間序列資料分類的準確度，與分析對於三種模型結合Grad-Cam的效果，研究出最適合本專題應用的神經網路架構。
 
-    \section{神經網路}
-    \begin{figure}[H]
-        \centering
-        % \includegraphics[scale=0.6]{dtu.jpg}
-        \caption{Sample Image}
-        \label{fig:sample image}
-    \end{figure}
+    % \section{神經網路}
+    % \begin{figure}[H]
+    %     \centering
+    %     % \includegraphics[scale=0.6]{dtu.jpg}
+    %     \caption{Sample Image}
+    %     \label{fig:sample image}
+    % \end{figure}
 
-    \begin{table}[htbp]
-        \caption{Sample Table}
-        \vspace{0.5cm}
-        \resizebox{\columnwidth}{!}{%
-            \begin{tabular}{|c|c|c|c|c|}
-                \hline
-                Units in Hidden Layers & Accuracy & Precision & Recall & F1-score \\
-                \hline
+    % \begin{table}[htbp]
+    %     \caption{Sample Table}
+    %     \vspace{0.5cm}
+    %     \resizebox{\columnwidth}{!}{%
+    %         \begin{tabular}{|c|c|c|c|c|}
+    %             \hline
+    %             Units in Hidden Layers & Accuracy & Precision & Recall & F1-score \\
+    %             \hline
 
-                100,20,20              & 0        & 0         & 0      & 0        \\
-                100,20,20              & 0        & 0         & 0      & 0        \\
-                100,20,20              & 0        & 0         & 0      & 0        \\
-                100,20,20              & 0        & 0         & 0      & 0        \\
-                100,20,20              & 0        & 0         & 0      & 0        \\
-                \hline
-            \end{tabular}
-        }
-    \end{table}
+    %             100,20,20              & 0        & 0         & 0      & 0        \\
+    %             100,20,20              & 0        & 0         & 0      & 0        \\
+    %             100,20,20              & 0        & 0         & 0      & 0        \\
+    %             100,20,20              & 0        & 0         & 0      & 0        \\
+    %             100,20,20              & 0        & 0         & 0      & 0        \\
+    %             \hline
+    %         \end{tabular}
+    %     }
+    % \end{table}
 
     \chapter{系統實驗}
     \section{實驗設計}
 
     \begin{enumerate}
         \item 手勢類別辨識
-              %八個類別(混淆矩陣?)、訓練樣本數、訓練樣本來自人數
+              利用混淆矩陣針對辨識結果\\
+              Accuracy = (TP+TN)/Tot.N \\
+              Precision = TP / (TP+FP) \\
+              Recall = TP / (TP+FN) \\
+              F1 score =
+              %   \begin{Huge}
+              \begin{math}
+                  \frac{2*Precision*Recall}{Precision+Recall} \\
+              \end{math}
+              %   \end{Huge}
+              score值介於0-1，1是最好，0是最差。 \\
+              \begin{table}[htbp]
+                  \vspace{0.3cm}
+                  \resizebox{\columnwidth}{!}{
+                      \begin{tabular}{|c|c|c|}
+                          \hline
+                          -        & 實際正確 & 實際錯誤 \\
+                          \hline
+                          預測正確 & TP       & FP       \\
+                          預測錯誤 & FN       & TN       \\
 
+                          \hline
+                      \end{tabular}
+                  }
+              \end{table}
+
+              %八個類別(混淆矩陣?)、訓練樣本數、訓練樣本來自人數
+              %   收集多少樣本(預計每個手勢有10個人，每人約提供30個樣本影片，其中須包含10個不標準的動作，使神經網路訓練判斷依據時能更有彈性)
         \item 特徵擷取工具
-              %比較openpose和mediapipe兩種工具對於手部辨識的精準度
+              %   比較Openpose和Mediapipe兩種工具對於手部辨識的精準度，
+
 
         \item 錯誤偵測精準度判斷
-              %幾個手勢平均準度
-              %指出哪個畫面沒有演好(誰來決定) 如何用側資驗證我有這個功能 甚麼指標稱做恰當 40個畫面 第五個畫面沒筆好 到底對不對 => 論文(其他人怎麼做) 獨創(合不合理) 資料的收集閱讀
+              %  依據預測分類結果正確或錯誤將Grad-cam的heatmap抽取出來，正確的取第一名的結果指出哪一部分是神經網路判斷的依據，判斷錯誤的結果取第二名
+              % 八個手勢平均準度
+              % 指出哪個畫面沒有演好(誰來決定) 
+              % 如何用側資驗證我有這個功能 甚麼指標稱做恰當
+              % 40個畫面 第五個畫面沒比好 到底對不對 =>參考論文(其他人怎麼做) 獨創(合不合理) 資料的收集閱讀
+
+
 
     \end{enumerate}
 
     \section{效能評估與成果}
 
-    \chapter{模組設計描述}
-    \section{檔案名稱}
-    \section{函式原型宣告}
-    \section{模組功能說明}
-    \section{參數說明}
+    % \chapter{模組設計描述}
+    % \section{檔案名稱}
+    % \section{函式原型宣告}
+    % \section{模組功能說明}
+    % \section{參數說明}
 
     \chapter{結論與討論}
+    \chapter{工作分配}
+    \begin{table}[htbp]
+        \vspace{0.3cm}
+        \resizebox{\columnwidth}{!}{
+            \begin{tabular}{|c|c|c|}
+                \hline
+                學號     & 姓名   & 負責項目說明          \\
+                \hline
+
+                00853029 & 張正德 & Transformer、Grad-cam \\
+                00957202 & 吳秉宸 & Convolution、Grad-cam \\
+                00957209 & 林心怡 & LSTM、資料處理        \\
+
+                \hline
+            \end{tabular}
+        }
+    \end{table}
+
+    % \section{神經網路}
+    % \begin{enumerate}
+    %     \item CNN
+    %     \item Transformer
+    %     \item Lstm
+    % \end{enumerate}
+    % \section{偵錯功能}
+    % \section{UI使用者介面}
+
+
+
+
+
 
 
     \addcontentsline{toc}{chapter}{Appendices}
@@ -283,9 +393,12 @@
     \addcontentsline{toc}{chapter}{References}
 
     \begin{thebibliography}{99}
-        \bibitem{b1}Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-        \bibitem{b2}Lorem Ipsum is simply dummy text of the printing and typesetting
-        \bibitem{b3} Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        \bibitem{b1}黃致巽, "基於動態時間扭曲之人體姿態辨識 Dynamic Time Warping Based Recongition Of Human Body Gestures",碩士論文, 國立臺灣師範大學資訊工程研究所, 2013/7
+        \bibitem{b2}Feature Extraction with Video Summarization of Dynamic Gestures for Peruvian Sign Language Recognition, Andre Neyra-Gutíerrez Department of Computer Science Universidad Peruana de Ciencias Aplicadas Lima, Per
+        \bibitem{b3}Sign Language Action Recognition System Based on Deep Learning, Chaoqin Chu, Qinkun Xiao, Jielei Xiao, Chuanhai Gao, 2021
+        \bibitem{b4}Arabic Sign Language Recognition System Using 2D Hands and Body Skeleton Data, Mohamed A. Bencherif, 2021/4
+        \bibitem{b5}Isolated Sign Recognition from RGB Video using Pose Flow and Self-Attention, Mathieu De Coster, Mieke Van Herreweghe, Joni Dambre, 2021
+
     \end{thebibliography}
 
     \chapter*{\centering \large PAPER ACCEPTANCE PROOF\markboth{PAPER ACCEPTANCE PROOF}{PAPER ACCEPTANCE PROOF}}

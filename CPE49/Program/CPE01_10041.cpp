@@ -6,6 +6,7 @@
  * @date 2022-07-03
  * @copyright Copyright (c) 2022
  **/
+
 #include <iostream>
 #include <cmath>
 #include <algorithm>
