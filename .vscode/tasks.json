@@ -5,37 +5,11 @@
     "tasks": [
         {
             "label": "build",
-            "type": "shell",
+            "type": "process",
             "command": "g++",
             "args": [
-                "-g",
-                "${file}",
-                "-o",
-                "${fileBasenameNoExtension}.exe",
+                "-g", "${file}", "-o", "${fileBasenameNoExtension}.exe"
             ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
-        },
-        {
-            "type": "cppbuild",
-            "label": "C/C++: g++.exe build active file",
-            "command": "C:\\MinGW\\bin\\gcc.exe",
-            "args": [
-                "-g", //生成和調式有關的信息
-                "${file}",
-                "-o", //指定輸出文件名，不加該參數則默認輸出a.exe
-                "${fileDirname}\\${fileBasenameNoExtension}.exe",
-            ],
-            "options": {
-                "cwd": "C:\\MinGW\\bin"
-            },
-            "problemMatcher": [
-                "$gcc"
-            ],
-            "group": "build",
-            "detail": "compiler: C:\\MinGW\\bin\\gcc.exe"
         }
     ]
 }
