@@ -18,6 +18,7 @@
 \usepackage{blindtext}
 \usepackage{xpatch}
 \usepackage{mathptmx}
+\usepackage{diagbox}
 \usepackage{geometry}
 \geometry{
     right=25mm,
@@ -91,7 +92,7 @@
         \vspace{0.5cm}
 
         \begin{LARGE}
-            Sign Language Interaction Tutorial System - Openpose\\
+            Sign Language Interaction Tutorial System - Mediapipe\\
         \end{LARGE}
         \vspace{1cm}
         Instructor:\\
@@ -187,30 +188,76 @@
 
     \section{研究背景與目標}
     \par
-    手語是聾啞人士很重要的溝通方式，生活中難免碰到一些聾啞人士，想要與他們交流需先學習手語，但網路上現有的資源幾乎都是用影片學習的方式，沒有可以自我檢視的系統，因此本專題設計一套主要提供手語教學、測驗及偵錯的功能的系統，提供給想要入門手語的初學者一個學習的平台。
+    手語是聾啞人士很重要的溝通方式，生活中難免碰到一些聾啞人士，想要與他們交流需先學習手語，但網路上現有的資源幾乎都是用影片學習的方式，沒有可以自我檢視的系統，因此本專題設計一套主要對八類手語提供辨識、偵錯及評分功能的系統，提供給想要入門手語的初學者一個學習的平台，其中八類手語分別為：酸、甜、辣、鹹、美味、小吃、水餃、珍珠奶茶。
+    範例圖示:
+    \begin{enumerate}
+        \item 酸(sour):\\
+              \includegraphics[width=45mm]{sour01.png}
+              \includegraphics[width=45mm]{sour02.png}
+              \includegraphics[width=45mm]{sour03.png}
+              %   \includegraphics[width=45mm]{sour04.png}
+        \item 甜(sweet):\\
+              \includegraphics[width=45mm]{sweet01.png}
+              \includegraphics[width=45mm]{sweet02.png}
+              \includegraphics[width=45mm]{sweet03.png}\\
+              \includegraphics[width=45mm]{sweet04.png}
+        \item 辣(spicy):\\
+              \includegraphics[width=45mm]{spicy01.png}
+              \includegraphics[width=45mm]{spicy02.png}
+              \includegraphics[width=45mm]{spicy03.png}
+              %   \includegraphics[width=45mm]{spicy04.png}
+        \item 鹹(salty):\\
+              \includegraphics[width=45mm]{salty01.png}
+              \includegraphics[width=45mm]{salty02.png}
+              \includegraphics[width=45mm]{salty03.png}
+              %   \includegraphics[width=45mm]{salty04.png}
+        \item 美味(yummy):\\
+              \includegraphics[width=45mm]{yummy01.png}
+              \includegraphics[width=45mm]{yummy02.png}
+              \includegraphics[width=45mm]{yummy03.png}
+              %   \includegraphics[width=45mm]{yummy04.png}
+        \item 小吃(snack):\\
+              \includegraphics[width=45mm]{snack01.png}
+              \includegraphics[width=45mm]{snack02.png}
+              \includegraphics[width=45mm]{snack03.png}\\
+              \includegraphics[width=45mm]{snack04.png}
+        \item 水餃(dumpling):\\
+              \includegraphics[width=45mm]{dumpling01.png}
+              \includegraphics[width=45mm]{dumpling02.png}
+              \includegraphics[width=45mm]{dumpling03.png}\\
+              \includegraphics[width=45mm]{dumpling04.png}
+              \includegraphics[width=45mm]{dumpling05.png}
+        \item 珍珠奶茶(bubble tea):\\
+              \includegraphics[width=45mm]{bubbletea01.png}
+              \includegraphics[width=45mm]{bubbletea02.png}
+              \includegraphics[width=45mm]{bubbletea03.png}\\
+              \includegraphics[width=45mm]{bubbletea04.png}
+              \includegraphics[width=45mm]{bubbletea05.png}
 
-    \section{現有相關研究概況}
+    \end{enumerate}
+    \section{現有相關研究概況(哪個論文，怎麼做的)}
     \par
-    對於手語辨認技術，有的採用Dynamic time warping(DTW)的方式來辨識手語，其方法是比對兩個時間序列的差異並利用K-Nearest Neighbors演算法判斷辨識結果，時間複雜度為兩個時間序列的長度的乘積──O(mn)，當時間序列長度越長所需時間越長，而在現今的手語辨認技術上，已經可以利用深度學習辨識出動態的手語片段，但無偵測錯誤的功能。
+    對於手語辨認技術，有的研究採用Dynamic time warping(DTW)的方式來辨識手語，其方法是比對兩個時間序列的差異並利用K-Nearest Neighbors演算法判斷辨識結果，時間複雜度為兩個時間序列的長度的乘積──O(mn)，當時間序列長度越長所需時間越長，而在現今的手語辨認技術上，已經可以利用深度學習辨識出動態的手語片段，但無偵測錯誤的功能。
     % Dynamic time wrapping
     % 缺點1: 缺點是容易因相同的手語片段序列長度不同，，進而產生誤差，
     \par
 
-    \section{系統概述與流程圖}
-    \par
-    本系統主要提供手語教學、測驗及偵錯功能，其中測驗及偵錯為本專題的核心功能，可細分為三個階段：（一）辨識與擷取支幹特徵、（二）由神經網路進行分類及（三）利用神經網路其中一層的梯度資訊找出決策的依據進行偵錯。
+    \section{系統特色與流程圖}
 
     \par
-    系統的第一階段，選擇使用Mediapipe擷取支幹特徵，做適當的影片裁減、支幹點座標的正規化。
+    本系統主要提供手語辨識、偵錯及評分功能。\\
+    （一）由神經網路進行手語辨識及分類，（二）利用Grad-CAM技術找出神經網路的決策依據進行偵錯及評分。
+
+    \subsection{系統特色}
+    \par
+    本系統的訓練資料，是由Mediapipe提取影片的關節點座標，並標準化影片長度、正規化關節點的座標。
 
     \par
-    系統的第二階段，嘗試設計CNN、LSTM與Transformer三種不同的神經網路架構，經過實驗，最終採用最符合本系統的──CNN架構。
-
+    設計CNN、LSTM與Transformer三種不同的神經網路架構進行時間序列資料的辨識與分類，經由實驗結果發現，CNN架構善於對...進行分類；LSTM架構善於對...進行分類；Transformer架構善於對...進行分類。
     \par
-    系統的第三階段，選擇使用Grad-cam技術，擷取神經網路其中一層的梯度資訊，找出各項類別的關鍵偵數，推斷出該時間序列的錯誤偵數。
+    利用Grad-cam技術，擷取神經網路其中一層的梯度資訊，找出各項類別的關鍵偵數，推斷出該時間序列的錯誤偵數。
 
-    \par
-    其中，本系統的流程圖如下：\\
+    \subsection{系統流程圖}
     \includegraphics[width=3in]{demo.jpg}
     % Grad-CAM：「對於特定感興趣的決策值，Grad-CAM用回傳到CNN模型中最後一層卷積層的梯度資訊，來決定每個神經元的重要程度。」
     % \begin{enumerate}
@@ -225,7 +272,8 @@
     \chapter{技術介紹與方法設計}
     \section{技術介紹}
     \par
-    本系統將架構分為三部分:
+    % 本系統將架構分為三部分:
+    本系統主要使用的三大技術:
     \begin{enumerate}
         \item MediaPipe:
               \par
@@ -234,17 +282,36 @@
               MediaPipe提供人體支幹和手部的關鍵點，又因為MediaPipe的輕量、以及性能良好等優點，為本專題選擇的工具之一。\\
               下圖為MediaPipe對於一影片做hand solution graph的流程圖\\
               \includegraphics[width=5in]{mediapipe.png}
+
+
               % Gradient-weighted Class Activation Mapping
         \item 神經網路:
               \begin{itemize}
-                  \item Transforer:
+                  \item Transformer:
                         \par
+                        % \begin{figure}[ht]
+                        %     \begin{minipage}[t]{0.33\linewidth}
+                        %         % \centering
+                        %         \includegraphics[width=50mm]{transformer_model_01.png}
+                        %     \end{minipage}%
+                        %     \begin{minipage}[t]{0.33\linewidth}
+                        %         % \centering
+                        %         \includegraphics[width=50mm]{transformer_model_02.png}
+                        %     \end{minipage}%
+                        % \end{figure}
+                        \includegraphics[width=3in]{transformer_model.png}
+                        % \includegraphics[width=55mm]{transformer_model_02.png}
+                        \newpage
 
                   \item Convolution:
                         \par
+                        \includegraphics[width=3in]{convolution_model.png}
 
+                        \newpage
                   \item LSTM:
                         \par
+                        \includegraphics[width=3in]{Lstm_model.png}
+
 
               \end{itemize}
         \item Grad-Cam
@@ -295,32 +362,62 @@
     \section{實驗設計}
 
     \begin{enumerate}
-        \item 手勢類別辨識
-              利用混淆矩陣針對辨識結果\\
-              Accuracy = (TP+TN)/Tot.N \\
-              Precision = TP / (TP+FP) \\
-              Recall = TP / (TP+FN) \\
-              F1 score =
-              %   \begin{Huge}
-              \begin{math}
-                  \frac{2*Precision*Recall}{Precision+Recall} \\
-              \end{math}
-              %   \end{Huge}
-              score值介於0-1，1是最好，0是最差。 \\
-              \begin{table}[htbp]
-                  \vspace{0.3cm}
-                  \resizebox{\columnwidth}{!}{
-                      \begin{tabular}{|c|c|c|}
-                          \hline
-                          -        & 實際正確 & 實際錯誤 \\
-                          \hline
-                          預測正確 & TP       & FP       \\
-                          預測錯誤 & FN       & TN       \\
+        \item 手勢類別辨識\\
+              利用混淆矩陣針對辨識結果
 
-                          \hline
-                      \end{tabular}
-                  }
-              \end{table}
+              \begin{Large}
+                  \begin{math}
+                      Accuracy =\frac{TP+TN}{Tot.N}
+                  \end{math}
+
+                  \begin{math}
+                      Precision =\frac{TP}{TP+FP}
+                  \end{math}
+
+                  \begin{math}
+                      Recall =\frac{TP}{TP+FN}
+                  \end{math}
+
+                  %   \begin{Huge}
+                  F1 score =
+                  \begin{math}
+                      \frac{2*Precision*Recall}{Precision+Recall}
+                  \end{math}
+              \end{Large}
+              \par
+              score值介於0-1，1是最好，0是最差。
+              \newpage
+              \begin{enumerate}
+                  \item Transformer Model 的混淆矩陣:\\
+                        \includegraphics[width=100mm]{Transformer_vector_confusion_matrix.png}
+                  \item Convolution Model 的混淆矩陣:\\
+                        \includegraphics[width=100mm]{Convolution_confusion_matrix.png}
+                  \item LSTM Model 的混淆矩陣:\\
+                        \includegraphics[width=100mm]{Lstm_confusion_matrix.png}
+
+
+              \end{enumerate}
+              \newpage
+              %   \begin{table}[htbp] %https://www.it145.com/9/180666.html
+              %       \vspace{0.3cm}
+              %       \resizebox{\columnwidth}{!}{
+              %           \begin{tabular}{|l|c|c|c|c|c|c|c|c|}
+              %               \hline
+              %               \diagbox{True label}{Predicted label} & Salty & Snack & Bubbletea & Dumpling & Spicy & Sour & Sweet & Yummy \\
+              %               \hline
+              %               Salty                                 & 0     & 0     & 0         & 0        & 0     & 0    & 0     & 0     \\
+              %               Snack                                 & 0     & 0     & 0         & 0        & 0     & 0    & 0     & 0     \\
+              %               Bubbletea                             & 0     & 0     & 0         & 0        & 0     & 0    & 0     & 0     \\
+              %               Dumpling                              & 0     & 0     & 0         & 0        & 0     & 0    & 0     & 0     \\
+              %               Spicy                                 & 0     & 0     & 0         & 0        & 0     & 0    & 0     & 0     \\
+              %               Sour                                  & 0     & 0     & 0         & 0        & 0     & 0    & 0     & 0     \\
+              %               Sweet                                 & 0     & 0     & 0         & 0        & 0     & 0    & 0     & 0     \\
+              %               Yummy                                 & 0     & 0     & 0         & 0        & 0     & 0    & 0     & 0     \\
+
+              %               \hline
+              %           \end{tabular}
+              %       }
+              %   \end{table}
 
               %八個類別(混淆矩陣?)、訓練樣本數、訓練樣本來自人數
               %   收集多少樣本(預計每個手勢有10個人，每人約提供30個樣本影片，其中須包含10個不標準的動作，使神經網路訓練判斷依據時能更有彈性)
